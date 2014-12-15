@@ -38,7 +38,26 @@ $(function () {
             }
         });
     });
-
+    
+//        $('#getAll').click(function () { 
+////        var inputText = $("#input_str").val();
+//        $.ajax({
+//            url: 'getAll',
+//            type: 'GET',
+//            dataType: 'json',
+//            contentType: 'application/json',
+//            mimeType: 'application/json',
+//            data: ({
+//                text: "inputTextS"
+//            }),
+//            success: function (data) {
+//                var result = 'id = ' + data.id + ', name = ' + data.name + ', released = ' + data.released + ', ';
+//                $("#result_all").text(result).css({background: 'cyan'});
+//                $(".name").text("Name : " + data.name);
+//                $(".released").text('Released : ' + data.released);
+//            }
+//        });
+//    });
 
 
 

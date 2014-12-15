@@ -41,7 +41,7 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public List<Film> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return contentRepository.findAll();
     }
 
 }

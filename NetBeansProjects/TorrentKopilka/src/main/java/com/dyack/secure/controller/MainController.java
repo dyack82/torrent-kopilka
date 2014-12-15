@@ -8,6 +8,8 @@ import com.dyack.secure.repository.BankRepository;
 import com.dyack.secure.service.BankService;
 import com.dyack.secure.service.ContentService;
 import com.dyack.secure.service.impl.BankServiceImpl;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -72,17 +74,28 @@ public class MainController {
     
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public @ResponseBody
-    Film getAll() {
+    List<Film> getAll() {
         System.err.println("**********************");
         System.err.println("getAll =========== ");
 //        FilmResponce filmResponse = new FilmResponce();
-            film = new Film();
-            film = contentService.getById(1);           
+           List<Film> filmList = new ArrayList<>();
+            filmList = contentService.getAll();
 //            filmResponse.setName(film.getName());
-        return film;
+        return filmList;
     }
     
-    
+//        @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+//    public @ResponseBody
+//    Film getAll() {
+//        System.err.println("**********************");
+//        System.err.println("getAll =========== ");
+////        FilmResponce filmResponse = new FilmResponce();
+//            film = new Film();
+//            film = contentService.getById(1);           
+////            filmResponse.setName(film.getName());
+//        return film;
+//    }
+        
 //    @RequestMapping(value = "/searchContent", method = RequestMethod.GET)
 //    public @ResponseBody
 //    Response getCharNum(@RequestParam String text) {
