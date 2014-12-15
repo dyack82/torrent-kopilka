@@ -18,8 +18,7 @@ $(function () {
             }
         });
     });
-
-    $('#getAll').click(function () { 
+    $('#getAll').click(function () {
 //        var inputText = $("#input_str").val();
         $.ajax({
             url: 'getAll',
@@ -31,14 +30,19 @@ $(function () {
                 text: "inputTextS"
             }),
             success: function (data) {
-                var result = 'id = ' + data.id + ', name = ' + data.name + ', released = ' + data.released + ', ';
-                $("#result_all").text(result).css({background: 'cyan'});
-                $(".name").text("Name : " + data.name);
-                $(".released").text('Released : ' + data.released);
+                console.log(data);
+                var result;
+                for (var tmp in data) {
+//                    document.write(tmp + " : " + data[tmp].name + "<br>")
+//                }
+                    result = 'id = ' + data[tmp].id + ', name = ' + data[tmp].name + ', released = ' + data[tmp].released + ', ';
+                    $("#result_all").text(result).css({background: 'cyan'});
+                    $(".name" + tmp).text("Name : " + data[tmp].name); // add 1 - 2 !!!!!!!!!!!!!
+                    $(".released" + tmp).text('Released : ' + data[tmp].released);
+                }
             }
         });
     });
-    
 //        $('#getAll').click(function () { 
 ////        var inputText = $("#input_str").val();
 //        $.ajax({

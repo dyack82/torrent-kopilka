@@ -20,17 +20,19 @@
         <p id="result_text"></p>
 
         <h1>Hello indexS.jsp!</h1>
-        
-          <h3>Get Information:</h3>
+
+        <h3>Get Information:</h3>
         <input id="getAll" type="button" value="all">
         <p id="result_all"></p>      
-        
-        
+
+
 
         <button id="getForecast">Получить прогноз погоды</button>
         <div class="block">
-            <h2 class="name">Название : </h2>
-            <h2 class="released">Год выхода : </h2>
+            <h2 class="name0">Название : </h2>
+            <h2 class="released0">Год выхода : </h2>
+            <h2 class="name1">Название : </h2>
+            <h2 class="released1">Год выхода : </h2>
             <h2>Качество : " ${kach} "</h2>
             <h2>Размер : " ${size} "</h2>
             <h2>Movie : " ${movie} "</h2>
