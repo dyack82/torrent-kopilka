@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+        <script type="text/javascript" src="/pages/js/jquery.min.js"></script>
+        <title>HTML Page</title>
+
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <h1>Hello <input id="imp1" type="text"></h1>
+        <h1 id="p1">Hello Torrent!</h1>
+             
+        
+        <div data-th-each="phoneBalance : ${phoneBalances}">
+            <div>
+                +7<span th:text="${one}"/> : <span th:text="${phoneBalance.balance}"/> руб.
+            </div>
+        </div>
+    </body>
+</html>
