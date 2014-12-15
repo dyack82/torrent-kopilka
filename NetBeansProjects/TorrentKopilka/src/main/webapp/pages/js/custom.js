@@ -1,5 +1,8 @@
 $(function () {
 
+    var post = $('.post').clone();
+    $('#posts').append(post);
+
 
     $('#search').click(function () {              // search content
         var inputText = $("#input_name").val();
@@ -18,6 +21,8 @@ $(function () {
             }
         });
     });
+    
+    
     $('#getAll').click(function () {
 //        var inputText = $("#input_str").val();
         $.ajax({

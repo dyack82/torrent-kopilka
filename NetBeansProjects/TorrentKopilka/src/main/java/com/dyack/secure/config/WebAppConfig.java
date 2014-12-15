@@ -31,7 +31,7 @@ public UserDetailsService getUserDetailsService(){
     public UrlBasedViewResolver setupViewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();
         resolver.setPrefix("/pages/"); // pages // secure
-        resolver.setSuffix(".jsp");     // jsp // html
+        resolver.setSuffix(".html");     // .jsp // .html
         resolver.setViewClass(JstlView.class);
 
         return resolver;
