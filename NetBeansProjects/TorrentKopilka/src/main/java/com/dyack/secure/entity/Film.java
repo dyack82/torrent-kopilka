@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "film")
-public class Film implements Serializable {
+public class Film implements Serializable {  // ? Serializable
 
     @Id
     @GeneratedValue(generator = "increment")

@@ -27,16 +27,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/")
 public class MainController {
-    
-//    private static final Logger logger = Logger.getLogger(MainController.class);
 
+//    private static final Logger logger = Logger.getLogger(MainController.class);
     @Autowired
     BankService bankService;
-    
+
     @Autowired
     ContentService contentService;
-    
-    Bank bank;
+
+//    Bank bank;
     Film film;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -44,46 +43,38 @@ public class MainController {
         return "indexS";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String createBank(ModelMap model) {
-//        Bank 
-        bank = new Bank();
-        bank.setId(5);
-        bank.setName("Privat123");
-
-        bankService.addBank(bank);
-        return "indexS";
-    }
-
-
     @RequestMapping(value = "/searchContent", method = RequestMethod.GET)
     public @ResponseBody
     Film searchContent(@RequestParam String text) {
-//        Response result = new Response();
-        film = new Film();
-//        if (text != null) {          
-            film = contentService.getByName(text);        
-//            result.setText(bank.getName());
-//            result.setCount(text.length());
-//        } else {
-//            film.setName("NE NAYDENO");
-//        }
-//        System.err.println("film.name = " + film.getName());
-        return film;
+        return contentService.getByName(text);
     }
-    
+
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public @ResponseBody
     List<Film> getAll() {
-        System.err.println("**********************");
-        System.err.println("getAll =========== ");
-//        FilmResponce filmResponse = new FilmResponce();
-           List<Film> filmList = new ArrayList<>();
-            filmList = contentService.getAll();
-//            filmResponse.setName(film.getName());
-        return filmList;
+        return contentService.getAll();
     }
-    
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public void createFilm() {
+        film = new Film();
+//        film.setId(10);
+        film.setName("Matrix5");
+        film.setReleased("2012");
+        film.setCountry("Australia");
+        contentService.addFilm(film);
+    }
+
+//    @RequestMapping(value = "/add", method = RequestMethod.GET)
+//    public String createBank(ModelMap model) {
+////        Bank 
+//        bank = new Bank();
+//        bank.setId(5);
+//        bank.setName("Privat123");
+//
+//        bankService.addBank(bank);
+//        return "indexS";
+//    }
 //        @RequestMapping(value = "/getAll", method = RequestMethod.GET)
 //    public @ResponseBody
 //    Film getAll() {
@@ -95,7 +86,6 @@ public class MainController {
 ////            filmResponse.setName(film.getName());
 //        return film;
 //    }
-        
 //    @RequestMapping(value = "/searchContent", method = RequestMethod.GET)
 //    public @ResponseBody
 //    Response getCharNum(@RequestParam String text) {
@@ -108,8 +98,6 @@ public class MainController {
 //        }
 //        return result;
 //    }
-    
-    
     //    @RequestMapping(value = "/add", method = RequestMethod.GET)
 //    public String getAllMovie(ModelMap model) {
 //
@@ -127,9 +115,6 @@ public class MainController {
 //        model.addAttribute("movie", "*** ");
 //        return "indexS";
 //    }
-    
-    
-
 //    private static Logger logger = Logger.getLogger(MainController.class.getName());
     // @Autowired - ???
 //    private EntityDao entity;

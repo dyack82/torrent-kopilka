@@ -37,7 +37,7 @@ $(function () {
 //                }
                     result = 'id = ' + data[tmp].id + ', name = ' + data[tmp].name + ', released = ' + data[tmp].released + ', ';
                     $("#result_all").text(result).css({background: 'cyan'});
-                    $(".name" + tmp).text("Name : " + data[tmp].name); // add 1 - 2 !!!!!!!!!!!!!
+                    $(".name" + tmp).text("Name : " + data[tmp].name);
                     $(".released" + tmp).text('Released : ' + data[tmp].released);
                 }
             }

@@ -15,13 +15,13 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public Film addFilm(Film film) {
-        Film savedFilm = contentRepository.saveAndFlush(film);
-        return savedFilm;
+//        Film savedFilm = contentRepository.saveAndFlush(film);
+        return contentRepository.saveAndFlush(film);
     }
 
     @Override
     public void delete(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        contentRepository.delete(id);
     }
  
     @Override
@@ -36,7 +36,7 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public Film editFilm(Film film) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return contentRepository.saveAndFlush(film);
     }
 
     @Override
