@@ -1,6 +1,6 @@
 $(function () {
 
-		for(var i=0;i<4;i++){
+		for(var i=0;i<12;i++){
 			var post = $('#clone').clone();                 
 			$('#posts').append(post);     
 		}
@@ -38,34 +38,32 @@ $(function () {
             }),
             success: function (data) {
                 console.log(data);
-//                var result;
+                
                 for (var tmp in data) {
-//                    document.write(tmp + " : " + data[tmp].name + "<br>")
-//                }
-//                    result = 'id = ' + data[tmp].id + ', name = ' + data[tmp].name + ', released = ' + data[tmp].released + ', ';
-//                    $("#result_all").text(result).css({background: 'cyan'});
-                    $(".name").eq(tmp).text(data[tmp].name + ' / original name');
-//                    $(".category").eq(tmp).text(data[tmp].);
-                    $(".released").eq(tmp).text(data[tmp].released);
-                    $(".country").eq(tmp).text(data[tmp].country);
-                    $(".genre").eq(tmp).text(data[tmp].genre);
-                    $(".regisser").eq(tmp).text(data[tmp].regisser);
-//                    $(".acters").eq(tmp).text(data[tmp].);
+                    if(data[tmp].name){             $(".name").eq(tmp).text(data[tmp].name); }
+                    var n = $(".name").eq(tmp).text();
+                    if(data[tmp].originalName){     $(".name").eq(tmp).text(n + '/' + data[tmp].originalName); }
+                    if(data[tmp].id){               $(".category").eq(tmp).text('id = ' + data[tmp].id + '  tmp = ' + tmp);}
+                    if(data[tmp].released){         $(".released").eq(tmp).text(data[tmp].released);}
+                    if(data[tmp].country){          $(".country").eq(tmp).text(data[tmp].country);}
+                    if(data[tmp].genre){            $(".genre").eq(tmp).text(data[tmp].genre);}
+                    if(data[tmp].regisser){         $(".regisser").eq(tmp).text(data[tmp].regisser);}
+                    if(data[tmp].acters){           $(".acters").eq(tmp).text(data[tmp].acters);}
+                    if(data[tmp].age_viewers){      $(".age_viewers").eq(tmp).text(data[tmp].age_viewers);}
+                    if(data[tmp].time_duration){    $(".time_duration").eq(tmp).text(data[tmp].time_duration);}
+                    
+                    if(data[tmp].images){    $('#posts img').eq(tmp).attr('src', 'pages/images/1.jpg'); }
                 }
             }
         });
     });
     
     
-//                     
-//
-//
-//          
-//
-//                        @Column(name = "age_viewers")
-//                        private String age_viewers;
-//
-//                        @Column(name = "time_duration")
+//                                                               
+//                                                    
+//                                                    <h3 class="acters">---</h3>
+//                                                    <h3 class="age_viewers">---</h3>
+//                                                    <h3 class="time_duration">---</h3>
     
     
 //        $('#getAll').click(function () { 
