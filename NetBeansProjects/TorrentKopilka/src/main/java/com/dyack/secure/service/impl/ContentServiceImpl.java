@@ -23,7 +23,7 @@ public class ContentServiceImpl implements ContentService {
     public void delete(long id) {
         contentRepository.delete(id);
     }
- 
+
     @Override
     public Film getById(long id) {
         return contentRepository.findById(id);
@@ -41,7 +41,12 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public List<Film> getAll() {
-       return contentRepository.findAll();
+        return contentRepository.findAll();
+    }
+
+    @Override
+    public List<Film> get10LastAdded() {
+        return contentRepository.get10LastAdded();
     }
 
 }

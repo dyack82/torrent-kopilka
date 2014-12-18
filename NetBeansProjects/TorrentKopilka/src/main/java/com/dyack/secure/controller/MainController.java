@@ -29,9 +29,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MainController {
 
 //    private static final Logger logger = Logger.getLogger(MainController.class);
-    @Autowired
-    BankService bankService;
-
+//    @Autowired
+//    BankService bankService;
     @Autowired
     ContentService contentService;
 
@@ -40,7 +39,7 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home2(Locale locale, Model model) {
-        return "indexS";
+        return "index";
     }
 
     @RequestMapping(value = "/searchContent", method = RequestMethod.GET)
@@ -58,11 +57,16 @@ public class MainController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public void createFilm() {
         film = new Film();
-//        film.setId(10);
         film.setName("Matrix5");
         film.setReleased("2012");
         film.setCountry("Australia");
         contentService.addFilm(film);
+    }
+
+    @RequestMapping(value = "/lastAdded", method = RequestMethod.GET)
+    public @ResponseBody
+    List<Film> get10LastAdded() {
+        return contentService.get10LastAdded();
     }
 
 //    @RequestMapping(value = "/add", method = RequestMethod.GET)

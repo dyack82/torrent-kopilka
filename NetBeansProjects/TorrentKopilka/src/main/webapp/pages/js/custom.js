@@ -1,7 +1,9 @@
 $(function () {
 
-    var post = $('.post').clone();
-    $('#posts').append(post);
+		for(var i=0;i<4;i++){
+			var post = $('#clone').clone();                 
+			$('#posts').append(post);     
+		}
 
 
     $('#search').click(function () {              // search content
@@ -36,18 +38,36 @@ $(function () {
             }),
             success: function (data) {
                 console.log(data);
-                var result;
+//                var result;
                 for (var tmp in data) {
 //                    document.write(tmp + " : " + data[tmp].name + "<br>")
 //                }
-                    result = 'id = ' + data[tmp].id + ', name = ' + data[tmp].name + ', released = ' + data[tmp].released + ', ';
-                    $("#result_all").text(result).css({background: 'cyan'});
-                    $(".name" + tmp).text("Name : " + data[tmp].name);
-                    $(".released" + tmp).text('Released : ' + data[tmp].released);
+//                    result = 'id = ' + data[tmp].id + ', name = ' + data[tmp].name + ', released = ' + data[tmp].released + ', ';
+//                    $("#result_all").text(result).css({background: 'cyan'});
+                    $(".name").eq(tmp).text(data[tmp].name + ' / original name');
+//                    $(".category").eq(tmp).text(data[tmp].);
+                    $(".released").eq(tmp).text(data[tmp].released);
+                    $(".country").eq(tmp).text(data[tmp].country);
+                    $(".genre").eq(tmp).text(data[tmp].genre);
+                    $(".regisser").eq(tmp).text(data[tmp].regisser);
+//                    $(".acters").eq(tmp).text(data[tmp].);
                 }
             }
         });
     });
+    
+    
+//                     
+//
+//
+//          
+//
+//                        @Column(name = "age_viewers")
+//                        private String age_viewers;
+//
+//                        @Column(name = "time_duration")
+    
+    
 //        $('#getAll').click(function () { 
 ////        var inputText = $("#input_str").val();
 //        $.ajax({

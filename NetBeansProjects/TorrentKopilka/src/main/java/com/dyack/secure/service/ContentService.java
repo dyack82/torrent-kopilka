@@ -11,5 +11,5 @@ public interface ContentService {
     Film getByName(String name);
     Film editFilm(Film film);
     List<Film> getAll();
-
+    List<Film> get10LastAdded();
 }

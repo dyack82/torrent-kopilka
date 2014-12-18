@@ -1,9 +1,11 @@
 body{
-  margin: 0 auto;
-/*  font-family: Arial, "MS Trebuchet", sans-serif;*/
-	font: normal 13px/17px Tahoma, "Trebuchet MS", Helvetica, sans-serif;
-/*  width: 960px;*/
-	background: url(../images/grey_wash_wall.png);	
+    margin: 0;
+    padding: 0;
+    /*  font-family: Arial, "MS Trebuchet", sans-serif;*/
+    font: normal 13px/17px Tahoma, "Trebuchet MS", Helvetica, sans-serif;
+    /*  width: 960px;*/
+    background: url(../images/grey_wash_wall.png);	
+    background-attachment: fixed;
 }
 
 /*p{ margin: 0 0 20px 0;}*/
@@ -11,37 +13,43 @@ body{
 /*p, li{ line-height: 20px; }*/
 
 #page_header{ 
-	background: yellow;
-	width: 100%; 
-}
-
-#page_header > nav > ul, #page_footer > nav > ul{
-	border: 1px solid black;
-  list-style: none;
-   margin: auto 10% ;
-  padding: 10px;
-	border-radius: 5px;
-}
-
-#page_header > nav > ul > li, #page_footer nav > ul > li{
-  margin: 0 20px 0 0;
-  padding: 0;
-  display: inline;
+    background: yellow;
+    width: 100%; 
+    height: 100px;
+    margin-top: -15px;
 }
 
 
 
-
-
-
-
-
-
-
-div {
-    width: 200px;
-    margin: 50px auto;
+.navigation {
+    margin-top: 10px;
 }
+
+.navigation > nav > ul, #page_footer > nav > ul{
+    background: cyan;
+    border: 1px solid black;
+    list-style: none;
+    margin: auto 10% ;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navigation > nav > ul > li, #page_footer nav > ul > li{
+    margin: 0 20px 0 0;
+    padding: 0;
+    display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 span {
     font-size: 40px;
@@ -63,113 +71,178 @@ span:hover:before {
 
 
 .post_header  {
-background: cyan;	
-/*height: 60px;*/
+    background: cyan;	
+    /*height: 60px;*/
 }
 
-.post_header h2 {
-/*display: inline-block;*/
-	background: white;
+
+.name {
+    background: pink;
+    text-align: left;
+    /*	display: inline-block;*/
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 15px;
 }
+
+.name small {
+    font-size: 15px;
+}
+
 
 .ratebox {
-margin-right: 50px;
-	text-align: right;
-	background: yellow;
+    margin-right: 50px;
+    text-align: right;
+    background: yellow;
+
+    /*	display: inline-block;*/
+    /*	position: relative;*/
+}
+
+td.key h3 {
+    text-align: right;	
 }
 
 
 
 #sidebar{
-	background: #0c0;;
-  float: left;
-  width: 15%;
-	margin-left: 10%;
-	margin-top: 10px;
-	border-radius: 10px 0 0 10px;
+    background: #0c0;;
+    float: left;
+    width: 15%;
+    margin-left: 10%;
+    margin-top: 10px;
+    border-radius: 10px 0 0 10px;
 }
 
 #posts{
-	margin: 10px auto;
-	background: #f00;
-  float: right;
-  width: 65%;
-	margin-right: 10%;
-	border-radius: 0 10px 10px 0;
-	 text-align: justify;
-	border-bottom: 5px solid cyan;
-	display: inline-block;
+    margin: 10px auto;
+    background: #f00;
+    float: right;
+    width: 65%;
+    margin-right: 10%;
+    border-radius: 0 10px 10px 0;
+    text-align: justify;
+    border-bottom: 5px solid cyan;
+    display: inline-block;
 }
 #posts aside{
-	background: yellow;
-  float: right;
-  margin-left: 5px;
-  width: 35px;
-	height: 200px;
-	border-radius: 10px;
+    background: yellow;
+    float: right;
+    margin-left: 5px;
+    width: 35px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+#posts h3 {
+    color: white;	
+    margin: 5px;
 }
 
 img {
-	padding: 3px;	
-	cursor: pointer;
-	display: inline-block;
-	background: yellow;
+    padding: 3px;	
+    cursor: pointer;
+    display: inline-block;
+    background: yellow;
 }
 
 .post img {
-	margin-right: 15px;	
+    margin-right: 15px;	
 }
 
 a {
-/*	color: #37addd;*/
-	text-decoration: none;
+    /*	color: #37addd;*/
+    text-decoration: none;
 }
 
 nav ul li {
-	display: block;
-	list-style: none;
-	border: 1px solid red;
+    display: block;
+    list-style: none;
+    border: 1px solid red;
 }
 
+/*
 nav#top {
-	display: inline-block;
+        display: inline-block;
 border-bottom: 5px solid cyan ;	
-	
+        
 }
+*/
 
 #posts footer {
-/*	display: inline-block;*/
-	text-align: right;
-background: yellow;	
+    /*	display: inline-block;*/
+    text-align: right;
+    background: yellow;	
 }
 
-.post {
-border-bottom: 5px solid black;	
+#clone {
+    border-bottom: 5px solid black;
+    /*
+            margin-bottom: 5px;
+            background-color: rgba(0,0,0,.1);
+    */
+}
+
+.description {
+    background: blue;
+    height: 140px;
+    overflow: hidden;
+}
+
+.description button {
+    background: cyan;
+    text-align: right;
+    position: absolute;
 }
 
 /*
 tbody  {
-	display: table-row-group;
+        display: table-row-group;
 }
 */
 
 tbody .top tr {
-	background: yellow;
-	display: block;
+    background: yellow;
+    display: block;
 }
 
 tbody .top tr td {
-background: #eaeaea;	
-	border-bottom: 3px solid red;
+    background: #eaeaea;	
+    border-bottom: 3px solid red;
 }
 
 b {
-background: yellow;	
+    background: yellow;	
 }
+
+article .post {
+    margin-top: 20px;
+    background: black;
+}
+
+/*
+#clone {
+padding-top: 50px;	
+}
+*/
+
+/*
+separator {
+        display: block;
+        width: 100%;
+background-color: rgba(0,0,0,.1);	
+}
+*/
 /*
 nav img {
-	background: cyan;
-		display: bl;;
+        background: cyan;
+                display: bl;;
+}
+*/
+
+/*
+.post {
+margin-top: 5px;	
 }
 */
 
@@ -183,9 +256,9 @@ nav img {
 
 
 #page_footer{
-	background: yellow;
-  clear: both;
-  display: block; 
-  text-align: center;
-  width: 100%; 
+    background: yellow;
+    clear: both;
+    display: block; 
+    text-align: center;
+    width: 100%; 
 }
