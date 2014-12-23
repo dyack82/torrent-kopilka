@@ -1,6 +1,6 @@
 $(function () {
 
-		for(var i=0;i<12;i++){
+		for(var i=0;i<4;i++){
 			var post = $('#clone').clone();                 
 			$('#posts').append(post);     
 		}
@@ -52,7 +52,7 @@ $(function () {
                     if(data[tmp].age_viewers){      $(".age_viewers").eq(tmp).text(data[tmp].age_viewers);}
                     if(data[tmp].time_duration){    $(".time_duration").eq(tmp).text(data[tmp].time_duration);}
                     
-                    if(data[tmp].images){    $('#posts img').eq(tmp).attr('src', 'pages/images/1.jpg'); }
+                    if(data[tmp].images){    $('#posts img').eq(tmp).attr('src', data[tmp].images); }
                 }
             }
         });
