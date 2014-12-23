@@ -1,6 +1,6 @@
-package com.dyack.secure.repository;
+package com.dyack.kopilka.repository;
 
-import com.dyack.secure.entity.Film;
+import com.dyack.kopilka.entity.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

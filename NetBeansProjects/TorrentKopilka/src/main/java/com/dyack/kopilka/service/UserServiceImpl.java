@@ -1,6 +1,6 @@
-package com.dyack.secure.service;
+package com.dyack.kopilka.service;
 
-import com.dyack.secure.entity.User;
+import com.dyack.kopilka.entity.User;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,6 +1,6 @@
-package com.dyack.secure.service;
+package com.dyack.kopilka.service;
 
-import com.dyack.secure.entity.Film;
+import com.dyack.kopilka.entity.Film;
 import java.util.List;
 
 public interface ContentService {

@@ -1,4 +1,4 @@
-package com.dyack.secure.config;
+package com.dyack.kopilka.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

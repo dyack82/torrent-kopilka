@@ -1,13 +1,9 @@
-package com.dyack.secure.controller;
+package com.dyack.kopilka.controller;
 
-import com.dyack.secure.controller.responce.FilmResponce;
-import com.dyack.secure.controller.responce.Response;
-import com.dyack.secure.entity.Bank;
-import com.dyack.secure.entity.Film;
-import com.dyack.secure.repository.BankRepository;
-import com.dyack.secure.service.BankService;
-import com.dyack.secure.service.ContentService;
-import com.dyack.secure.service.impl.BankServiceImpl;
+import com.dyack.kopilka.controller.responce.FilmResponce;
+import com.dyack.kopilka.controller.responce.Response;
+import com.dyack.kopilka.entity.Film;
+import com.dyack.kopilka.service.ContentService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -29,12 +25,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MainController {
 
 //    private static final Logger logger = Logger.getLogger(MainController.class);
-//    @Autowired
-//    BankService bankService;
     @Autowired
     ContentService contentService;
 
-//    Bank bank;
     Film film;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)

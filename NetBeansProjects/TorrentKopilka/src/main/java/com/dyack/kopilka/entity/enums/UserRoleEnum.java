@@ -1,4 +1,4 @@
-package com.dyack.secure.entity.enums;
+package com.dyack.kopilka.entity.enums;
 
 public enum UserRoleEnum {
 

@@ -1,8 +1,8 @@
-package com.dyack.secure.service.impl;
+package com.dyack.kopilka.service.impl;
 
-import com.dyack.secure.entity.Film;
-import com.dyack.secure.repository.ContentRepository;
-import com.dyack.secure.service.ContentService;
+import com.dyack.kopilka.entity.Film;
+import com.dyack.kopilka.repository.ContentRepository;
+import com.dyack.kopilka.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

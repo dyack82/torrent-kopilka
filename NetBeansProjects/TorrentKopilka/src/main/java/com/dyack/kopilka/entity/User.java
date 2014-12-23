@@ -1,4 +1,4 @@
-package com.dyack.secure.entity;
+package com.dyack.kopilka.entity;
 
 public class User {
 

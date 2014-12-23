@@ -1,4 +1,4 @@
-package com.dyack.secure.entity;
+package com.dyack.kopilka.entity;
 
 import java.io.Serializable;
 import org.hibernate.annotations.GenericGenerator;

@@ -1,4 +1,4 @@
-package com.dyack.secure.config;
+package com.dyack.kopilka.config;
 
 import org.hibernate.ejb.HibernatePersistence;
 import org.springframework.context.annotation.Bean;
@@ -18,9 +18,9 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.dyack.secure")
+@ComponentScan("com.dyack.kopilka")
 @PropertySource("classpath:app.properties")
-@EnableJpaRepositories("com.dyack.secure.repository") // ???   service
+@EnableJpaRepositories("com.dyack.kopilka.repository") // ???   service
 public class DataConfig {
 
     private static final String PROP_DATABASE_DRIVER = "db.driver";

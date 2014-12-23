@@ -1,4 +1,4 @@
-package com.dyack.secure.controller.responce;
+package com.dyack.kopilka.controller.responce;
 
 public class Response {
 	

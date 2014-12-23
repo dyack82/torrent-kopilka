@@ -1,7 +1,7 @@
-package com.dyack.secure.service;
+package com.dyack.kopilka.service;
 
-import com.dyack.secure.entity.User;
-import com.dyack.secure.entity.enums.UserRoleEnum;
+import com.dyack.kopilka.entity.User;
+import com.dyack.kopilka.entity.enums.UserRoleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

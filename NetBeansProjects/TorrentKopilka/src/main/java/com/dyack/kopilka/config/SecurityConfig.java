@@ -1,6 +1,6 @@
-package com.dyack.secure.config;
+package com.dyack.kopilka.config;
 
-import com.dyack.secure.service.UserDetailsServiceImpl;
+import com.dyack.kopilka.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
