@@ -45,8 +45,8 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public List<Film> get10LastAdded() {
-        return contentRepository.get10LastAdded();
+    public List<Film> getLastAdded() {
+        return contentRepository.getLastAdded();
     }
 
 }

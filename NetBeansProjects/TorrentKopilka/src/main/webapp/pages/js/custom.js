@@ -44,12 +44,12 @@ $(function () {
                     var n = $(".name").eq(tmp).text();
                     if(data[tmp].originalName){     $(".name").eq(tmp).text(n + '/' + data[tmp].originalName); }
                     if(data[tmp].id){               $(".category").eq(tmp).text('id = ' + data[tmp].id + '  tmp = ' + tmp);}
-                    if(data[tmp].released){         $(".released").eq(tmp).text(data[tmp].released);}
+                    if(data[tmp].release_date){         $(".released").eq(tmp).text(data[tmp].release_date);}
                     if(data[tmp].country){          $(".country").eq(tmp).text(data[tmp].country);}
                     if(data[tmp].genre){            $(".genre").eq(tmp).text(data[tmp].genre);}
                     if(data[tmp].regisser){         $(".regisser").eq(tmp).text(data[tmp].regisser);}
                     if(data[tmp].acters){           $(".acters").eq(tmp).text(data[tmp].acters);}
-                    if(data[tmp].age_viewers){      $(".age_viewers").eq(tmp).text(data[tmp].age_viewers);}
+                    if(data[tmp].age_group){      $(".age_viewers").eq(tmp).text(data[tmp].age_group);}
                     if(data[tmp].time_duration){    $(".time_duration").eq(tmp).text(data[tmp].time_duration);}
                     
                     if(data[tmp].images){    $('#posts img').eq(tmp).attr('src', data[tmp].images); }

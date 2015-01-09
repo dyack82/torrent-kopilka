@@ -1,5 +1,5 @@
 package com.dyack.kopilka.entity;
 
-public class User {
+public class Country_film {
 
 }

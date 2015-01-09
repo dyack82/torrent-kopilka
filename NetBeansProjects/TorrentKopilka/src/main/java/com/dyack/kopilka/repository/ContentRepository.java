@@ -14,7 +14,7 @@ public interface ContentRepository extends JpaRepository<Film, Long> {
     @Query("select b from Film b where b.name = :name")
     Film findByName(@Param("name") String name);
 
-    @Query("select b from Film b where b.name = Titanic")
-    List<Film> get10LastAdded();
+    @Query("select b from Film b")
+    List<Film> getLastAdded();
 
 }

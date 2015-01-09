@@ -1,6 +1,7 @@
 package com.dyack.kopilka.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
@@ -11,7 +12,7 @@ public class Film implements Serializable {  // ? Serializable
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    @Column(name = "id", length = 6, nullable = false)
+    @Column(name = "film_id", length = 6, nullable = false)
     private long id;
 
     @Column(name = "name")
@@ -20,38 +21,33 @@ public class Film implements Serializable {  // ? Serializable
     @Column(name = "original_name")
     private String originalName;
 
-    @Column(name = "released")
-    private String released;
+    @Column(name = "age_group")
+    private Integer age_group;
 
-    @Column(name = "acters")
-    private String acters;
-
-    @Column(name = "country")
-    private String country;
-
-    @Column(name = "regisser")
-    private String regisser;
-
-    @Column(name = "genre")
-    private String genre;
-
-    @Column(name = "age_viewers")
-    private String age_viewers;
-
-    @Column(name = "time_duration")
-    private String time_duration;
-
-    @Column(name = "images")
-    private String images;
-
-    @Column(name = "star")
-    private float star;
-
-    @Column(name = "quality")
-    private String quality;
+    @Column(name = "duration")
+    private Integer duration;
 
     @Column(name = "description")
     private String description;
+
+    @Column(name = "add_date")
+    private Date add_date;
+
+    @Column(name = "release_date")
+    private Date release_date;
+
+    @Column(name = "downloads_count")
+    private Integer downloads_count;
+
+//    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "category_category_id")
+    private Integer category_category_id;
+
+    @Column(name = "image_image_id")
+    private Integer image_image_id;
+
+    @Column(name = "star_star_id")
+    private Integer star_star_id;
 
     public Film() {
     }
@@ -80,84 +76,20 @@ public class Film implements Serializable {  // ? Serializable
         this.originalName = originalName;
     }
 
-    public String getReleased() {
-        return released;
+    public Integer getAge_group() {
+        return age_group;
     }
 
-    public void setReleased(String released) {
-        this.released = released;
+    public void setAge_group(Integer age_group) {
+        this.age_group = age_group;
     }
 
-    public String getActers() {
-        return acters;
+    public Integer getDuration() {
+        return duration;
     }
 
-    public void setActers(String acters) {
-        this.acters = acters;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getRegisser() {
-        return regisser;
-    }
-
-    public void setRegisser(String regisser) {
-        this.regisser = regisser;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getAge_viewers() {
-        return age_viewers;
-    }
-
-    public void setAge_viewers(String age_viewers) {
-        this.age_viewers = age_viewers;
-    }
-
-    public String getTime_duration() {
-        return time_duration;
-    }
-
-    public void setTime_duration(String time_duration) {
-        this.time_duration = time_duration;
-    }
-
-    public String getImages() {
-        return images;
-    }
-
-    public void setImages(String images) {
-        this.images = images;
-    }
-
-    public float getStar() {
-        return star;
-    }
-
-    public void setStar(float star) {
-        this.star = star;
-    }
-
-    public String getQuality() {
-        return quality;
-    }
-
-    public void setQuality(String quality) {
-        this.quality = quality;
+    public void setDuration(Integer duration) {
+        this.duration = duration;
     }
 
     public String getDescription() {
@@ -167,5 +99,54 @@ public class Film implements Serializable {  // ? Serializable
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Date getAdd_date() {
+        return add_date;
+    }
+
+    public void setAdd_date(Date add_date) {
+        this.add_date = add_date;
+    }
+
+    public Date getRelease_date() {
+        return release_date;
+    }
+
+    public void setRelease_date(Date release_date) {
+        this.release_date = release_date;
+    }
+
+    public Integer getDownloads_count() {
+        return downloads_count;
+    }
+
+    public void setDownloads_count(Integer downloads_count) {
+        this.downloads_count = downloads_count;
+    }
+
+    public Integer getCategory_category_id() {
+        return category_category_id;
+    }
+
+    public void setCategory_category_id(Integer category_category_id) {
+        this.category_category_id = category_category_id;
+    }
+
+    public Integer getImage_image_id() {
+        return image_image_id;
+    }
+
+    public void setImage_image_id(Integer image_image_id) {
+        this.image_image_id = image_image_id;
+    }
+
+    public Integer getStar_star_id() {
+        return star_star_id;
+    }
+
+    public void setStar_star_id(Integer star_star_id) {
+        this.star_star_id = star_star_id;
+    }
+
 
 }

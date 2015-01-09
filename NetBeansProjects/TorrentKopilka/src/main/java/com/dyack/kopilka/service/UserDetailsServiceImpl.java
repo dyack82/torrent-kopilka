@@ -1,6 +1,6 @@
 package com.dyack.kopilka.service;
 
-import com.dyack.kopilka.entity.User;
+import com.dyack.kopilka.entity.UserDEVCOLIBRI;
 import com.dyack.kopilka.entity.enums.UserRoleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,7 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = userService.getUser("dyack");
+        UserDEVCOLIBRI user = userService.getUser("dyack");
         Set<GrantedAuthority> roles = new HashSet();
         roles.add(new SimpleGrantedAuthority(UserRoleEnum.USER.name()));
 

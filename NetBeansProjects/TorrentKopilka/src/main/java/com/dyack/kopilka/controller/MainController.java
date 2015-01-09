@@ -50,16 +50,16 @@ public class MainController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public void createFilm() {
         film = new Film();
-        film.setName("Matrix5");
-        film.setReleased("2012");
-        film.setCountry("Australia");
+//        film.setName("Matrix5");
+//        film.setReleased("2012");
+//        film.setCountry("Australia");
         contentService.addFilm(film);
     }
 
     @RequestMapping(value = "/lastAdded", method = RequestMethod.GET)
     public @ResponseBody
-    List<Film> get10LastAdded() {
-        return contentService.get10LastAdded();
+    List<Film> getLastAdded() {
+        return contentService.getLastAdded();
     }
 
 //    @RequestMapping(value = "/add", method = RequestMethod.GET)

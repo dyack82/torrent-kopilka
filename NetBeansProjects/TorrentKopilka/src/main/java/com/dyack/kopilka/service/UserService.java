@@ -1,9 +1,9 @@
 package com.dyack.kopilka.service;
 
-import com.dyack.kopilka.entity.User;
+import com.dyack.kopilka.entity.UserDEVCOLIBRI;
 
 public interface UserService {
 
-    User getUser(String login);
+    UserDEVCOLIBRI getUser(String login);
 
 }
