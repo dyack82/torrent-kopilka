@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+<!--
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/myform.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+-->
+        <script type="text/javascript" src="pages/js/jquery-2.1.1.min.js"></script>
+        <!--<script type="text/javascript" src="pages/js/myform.js"></script>-->
+        <script type="text/javascript" src="pages/js/login.js"></script>
+
+        <!--     @@@   <meta http-equiv="Content-Type" content="application/json; charset=UTF-8" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">-->
+        <title>Login 2</title>
+        <style>
+            #age_group,
+            #ratingSum,
+            #ratingCount,
+            #ratingKinopoisk,
+            #duration {
+                width: 70px;
+                display: inline;
+            }
+
+            ol li {
+                list-style: none;
+            }
+
+            input {
+                margin: 2px 0;
+            }
+        </style>
+    </head>
+
+    <body>
+
+
+        <div class="container" style="width: 800px;">
+            <form id="create_content" method="PUT">
+                <fieldset>
+                    <legend>Добавление нового контента</legend>
+                    <ol>
+                        <li>
+                            <label for="name">Название фильма:</label>
+                            <input  id="name" type="text"  autofocus="true" required name="name" value="Титаник">
+                        </li>
+                        <br/>
+                        <li>
+                            <label for="originalName">Оргинальное название:</label>
+                            <input id="originalName" type="text" required name="originalName" value="Titanic">
+                        </li>
+                        <br/>
+                        <li>
+                            <label for="ageGroup">Возростная группа:</label>
+                            <input id="ageGroup" type="number" name="ageGroup" value="12">
+                        </li>
+                        <br/>
+                        <li>
+                            <label for="duration">Продолжительность:</label>
+                            <input id="duration" type="number" name="duration" value="120">
+                        </li>
+
+                        <br/>
+                        <li>
+                            <label for="releaseDate">Дата выхода</label>
+                            <input id="releaseDate" type="date" name="releaseDate" value="2015-01-01">
+                        </li>
+                        <br/>
+                        <li>
+                            <label for="category">Категория</label>
+                            <select id="category">
+                                <option value="Художественный фильм" selected="selected">Художественный фильм</option>
+                                <option value="Документальный фильм">Документальный фильм</option>
+                                <option value="Псевдодокументальный фильм">Псевдодокументальный фильм</option>
+                                <option value="Мультфильм">Мультфильм</option>
+                                <option value="Сериал">Сериал</option>
+                                <option value="ТВ">ТВ</option>
+                            </select>
+                        </li>
+                        <br/>
+                        <li id="rating">
+                            <label for="ratingSum">Реутинг: Сумма</label>
+                            <input id="ratingSum" type="number" name="ratingSum" value="0">
+                            <label for="ratingCount">Количество</label>
+                            <input id="ratingCount" type="number" name="ratingCount" value="0">
+                            <label for="ratingKinopoisk">Kinopoisk</label>
+                            <input id="ratingKinopoisk" type="number" name="ratingKinopoisk" value="000000">
+                        </li>
+                        <br/>
+                        <li>
+                            <label for="trailerLink">Трейлер</label>
+                            <input id="trailerLink" type="url" name="trailerLink" value="http://www">
+                            <label for="trailerDescription">Описание:</label>
+                            <input id="trailerDescription" type="text" name="trailerDescription" value="Русский, Дублированный">
+                        </li>
+                        <br/>
+                        <li id="countrys">
+                            <label for="countrys">Страны:</label>
+                            <br/>
+                            <select id="country" name="country">
+                                <option value="" selected="selected"></option>
+                                <option value="Австралия">Австралия</option>
+                                <option value="Австрия">Австрия</option>
+                                <option value="Аргентина">Аргентина</option>
+                                <option value="Бельгия">Бельгия</option>
+                                <option value="Беларусь">Беларусь</option>
+                                <option value="Бразилия">Бразилия</option>
+                                <option value="Великобритания">Великобритания</option>
+                                <option value="Венгрия">Венгрия</option>
+                                <option value="Германия">Германия</option>
+                                <option value="Гонконг">Гонконг</option>
+                                <option value="Дания">Дания</option>
+                                <option value="Италия">Италия</option>
+                                <option value="Испания">Испания</option>
+                                <option value="Индия">Индия</option>
+                                <option value="Ирландия">Ирландия</option>
+                                <option value="Канада">Канада</option>
+                                <option value="Китай">Китай</option>
+                                <option value="Корея Южная">Корея Южная</option>
+                                <option value="Мексика">Мексика</option>
+                                <option value="Норвегия">Норвегия</option>
+                                <option value="Нидерланды">Нидерланды</option>
+                                <option value="Новая Зеландия">Новая Зеландия</option>
+                                <option value="Польша">Польша</option>
+                                <option value="Россия">Россия</option>
+                                <option value="США">США</option>
+                                <option value="СССР">СССР</option>
+                                <option value="Турция">Турция</option>
+                                <option value="Украина">Украина</option>
+                                <option value="Франция">Франция</option>
+                                <option value="Финляндия">Финляндия</option>
+                                <option value="Чехия">Чехия</option>
+                                <option value="Швеция">Швеция</option>
+                                <option value="Швейцария">Швейцария</option>
+                                <option value="Япония">Япония</option>
+                            </select>
+                        </li>
+                        <br/>
+                        <li id="genres">
+                            <label for="genre">Жанры:</label>
+                            <br/>
+                            <select id="genre" name="genre">
+                                <option value=""></option>
+                                <option value="аниме">аниме</option>
+                                <option value="биографический">биографический</option>
+                                <option value="боевик">боевик</option>
+                                <option value="вестерн">вестерн</option>
+                                <option value="военный">военный</option>
+                                <option value="детектив">детектив</option>
+                                <option value="детский">детский</option>
+                                <option value="драма">драма</option>
+                                <option value="исторический">исторический</option>
+                                <option value="кинокомикс">кинокомикс</option>
+                                <option value="комедия">комедия</option>
+                                <option value="концерт">концерт</option>
+                                <option value="короткометражный">короткометражный</option>
+                                <option value="криминал">криминал</option>
+                                <option value="мелодрама">мелодрама</option>
+                                <option value="мистика">мистика</option>
+                                <option value="мюзикл">мюзикл</option>
+                                <option value="научный">научный</option>
+                                <option value="приключения">приключения</option>
+                                <option value="реалити-шоу">реалити-шоу</option>
+                                <option value="семейный">семейный</option>
+                                <option value="спорт">спорт</option>
+                                <option value="ток-шоу">ток-шоу</option>
+                                <option value="триллер">триллер</option>
+                                <option value="ужасы">ужасы</option>
+                                <option value="фантастика">фантастика</option>
+                                <option value="фэнтези">фэнтези</option>		
+                            </select>
+                        </li>
+                        <br/>
+                        <li>
+                            <label for="producer">Режиссёры:</label>
+                            <br/>
+                            <input id="producer1" type="text" name="producer1" value="Квентин Тарантино">
+                            <input id="producer2" type="text" name="producer2" placeholder="">
+                            <input id="producer3" type="text" name="producer3" placeholder="">
+                        </li>
+                        <br/>
+                        <li>
+                            <label for="acter">Актёры:</label>
+                            <br/>
+                            <input id="acter1" type="text" name="acter1" value="Том Круз">
+                            <input id="acter2" type="text" name="acter2" placeholder="">
+                            <input id="acter3" type="text" name="acter3" placeholder="">
+                            <input id="acter4" type="text" name="acter4" placeholder="">
+                            <input id="acter5" type="text" name="acter5" placeholder="">
+                            <input id="acter6" type="text" name="acter6" placeholder="">
+                            <input id="acter7" type="text" name="acter7" placeholder="">
+                            <input id="acter8" type="text" name="acter8" placeholder="">
+                            <input id="acter9" type="text" name="acter9" placeholder="">
+                            <input id="acter10" type="text" name="acter10" placeholder="">
+                        </li>
+                        <br/>
+                        <li>
+                            <label for="description">Краткое описание</label>
+                            <textarea id="description" placeholder="Много лет назад....." style="height: 50px; width: 600px;"></textarea>
+                        </li>
+
+
+                        <li>
+                            <input id="reset" type="reset" required name="reset" placeholder="">
+                            <!--<input type="submit" value="Добавить в базу">-->
+                            <button id="addFilm">addFilm</button>
+                            <input type="button" value="****************">
+                        </li>
+                    </ol>
+                </fieldset>
+            </form>
+        </div>
+
+    </body>
+
+</html>
+<!-- value -> placeholder -->
+

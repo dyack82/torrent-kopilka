@@ -1,35 +1,59 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" content="text/html; charset=windows-1251">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="pages/css/style.css"> 
-        <link rel="stylesheet" href="pages/css/style2.css">
-        <title>Торрент Копилка!</title>
-        <script type="text/javascript" src="pages/js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="pages/js/custom.js"></script>
+
+
+        <link rel="stylesheet" href="./pages/css/style.css"> 
+        <link rel="stylesheet" href="./pages/css/style2.css">
+
+
+
+        <!--
+                        <link rel="stylesheet" href="css/style.css"> 
+                        <link rel="stylesheet" href="css/style2.css">
+        -->
+
+
+        <title>Копилка! HTML</title>
+
+
+        <script type="text/javascript" src="./pages/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="./pages/js/index.js"></script>
+
+
+
+        <!--
+                        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+                        <script type="text/javascript" src="js/index.js"></script>
+        -->
+
     </head>
 
     <body>
         <header id="page_header"> 
-            <h1>Торрент Копилка!</h1>
-            
-        <input id="getAll" type="button" value="all">
-        <p id="result_all"></p>
-        
+            <h1>Копилка!</h1>
+
+            -----------------------------------------------------------------------------------------<input id="getLast" type="button" value="getLast">
+            ***
+            <p id="result_all"></p>
+
         </header>
 
+
         <!--
-              <div class="navigation">
-                        <nav> 
-                  <ul>
-                    <li><a href="#">Последние добавленные</a></li>
-                    <li><a href="#">Топ по скачке</a></li>
-                    <li><a href="#">Топ по отзывам</a></li>
-                    <li><a href="#">Топ по лайкам</a></li>
-                  </ul>
-                </nav>
-              </div>
+                      <div class="navigation">
+                                <nav> 
+                          <ul>
+                            <li><a href="#">Последние добавленные</a></li>
+                            <li><a href="#">Топ по скачке</a></li>
+                            <li><a href="#">Топ по отзывам</a></li>
+                            <li><a href="#">Топ по лайкам</a></li>
+                          </ul>
+                        </nav>
+                      </div>
         -->
+
 
 
         <nav class="naws">
@@ -50,147 +74,185 @@
 
 
 
+        <section id="wrapper">
 
-        <section id="sidebar">
+            <section id="sidebar">
 
-            <nav id="janr">
-                <h3>Жанры:</h3>
-                <ul>
-                    <li>Боевики</li>
-                    <li>Драмы</li>
-                    <li>Ужасы</li>
-                    <li>Комедии</li>
-                    <li>Военные</li>
-                    <li>Криминал</li>
-                    <li>Триллеры</li>
-                    <li>Детективы</li>
-                    <li>Семейные</li>
-                    <li>Мелодрамы</li>
-                    <li>Фантастика</li>
-                    <li>Приключения</li>
-                    <li>Мультфильмы</li>
-                    <li>Документальные</li>
-                    <li>Спорт</li>
-                </ul>
-            </nav>
+                <nav id="janr">
+                    <h3>Жанры:</h3>
+                    <ul>
+                        <li>Боевики</li>
+                        <li>Драмы</li>
+                        <li>Ужасы</li>
+                        <li>Комедии</li>
+                        <li>Военные</li>
+                        <li>Криминал</li>
+                        <li>Триллеры</li>
+                        <li>Детективы</li>
+                        <li>Семейные</li>
+                        <li>Мелодрамы</li>
+                        <li>Фантастика</li>
+                        <li>Приключения</li>
+                        <li>Мультфильмы</li>
+                        <li>Документальные</li>
+                        <li>Спорт</li>
+                    </ul>
+                </nav>
 
-            <nav id="top">
-                <h3>Топ 10 за неделю:</h3>                    
-
-                <!--
-                                        <ul class="top_10">
-                                                    <img hspace="3" vspace="3" width="80" align="left" title="Профессионал (2014) " alt="Профессионал (2014) " src="images/fury.jpg">
-                                                <li><a href="#">Фильм</a></li>
-                                                <li><a href="#">Ярость</a></li>
-                                                <li><a href="#">2014</a></li>
-                                                <li><a href="#">Военный</a></li>
-                                        </ul> 
-                -->
-                <table>
-                    <tbody class="top">
-                        <tr>
-                            <td>
-                                <a title="Дракула / Dracula Untold (2014) " href="#">
-                                    <img hspace="3" vspace="3" width="80" align="left" title="Профессионал (2014) " alt="Профессионал (2014) " src="pages/images/fury.jpg">
-                                    <b>Дракула / Dracula Untold (2014) </b><br>  
-                                </a>    		
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </nav>
-
-        </section>          
+                <h3>Топ 10 за неделю:</h3>  
+                <nav id="top">
 
 
-        <section id="posts">
-            <article class="post">
-                <div id="clone">
-                    <header class="post_header">
-                        <div class="name">---</div>
-                        <div class="ratebox">
-                            <div>
-                                <span>☆<span>☆<span>☆<span>☆<span>☆<span>☆<span>☆<span>☆<span>☆<span>☆</span></span></span></span></span></span></span></span></span></span>
-                            </div>	  
-                        </div>
-                    </header>
+                    <!--
+                                            <ul class="top_10">
+                                                        <img hspace="3" vspace="3" width="80" align="left" title="Профессионал (2014) " alt="Профессионал (2014) " src="images/fury.jpg">
+                                                    <li><a href="#">Фильм</a></li>
+                                                    <li><a href="#">Ярость</a></li>
+                                                    <li><a href="#">2014</a></li>
+                                                    <li><a href="#">Военный</a></li>
+                                            </ul> 
+                    -->
                     <table>
-                        <tbody>
+                        <tbody class="top">
                             <tr>
                                 <td>
-                                    <a title="Возмутитель спокойствия (2014) " href="#">
-                                        <img class="last" align="left" src="pages/images/2.jpg" alt="Боргман: Возмутитель спокойствия / Borgman (2013) Скачать торрент" title="Боргман: Возмутитель спокойствия / Borgman (2013) Скачать торрент">
-                                    </a>   
-                                    <table>
-                                        <tbody>
-                                            <tr> 
-                                                <td class="key">
-                                                    <h3>Категория:</h3>
-                                                    <h3>Год выхода: </h3>                                                
-                                                    <h3>Страна:</h3>
-                                                    <h3>Жанр:</h3>
-                                                    <h3>Режиссёр:</h3>
-                                                    <h3>Актёры:</h3>
-                                                      <h3>Возростная группа:</h3>
-                                                        <h3>Продолжительность:</h3>
-                                                </td>
-                                                <td class="value">
-                                                    <h3 class="category">---</h3>
-                                                    <h3 class="released">---</h3>
-                                                    <h3 class="country">---</h3>
-                                                    <h3 class="genre">---</h3>
-                                                    <h3 class="regisser">---</h3>
-                                                    <h3 class="acters">---</h3>
-                                                    <h3 class="age_viewers">---</h3>
-                                                    <h3 class="time_duration">---</h3>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <a title="Дракула / Dracula Untold (2014) " href="#">
+                                        <img hspace="3" vspace="3" width="80" align="left" title="Профессионал (2014) " alt="Профессионал (2014) " src="pages/images/fury.jpg">
+                                        <!--                                        <img hspace="3" vspace="3" width="80" align="left" title="Профессионал (2014) " alt="Профессионал (2014) " src="images/fury.jpg">-->
 
-
-
-                                    <p class="description"> <big>Описание:</big>  1 One way you can keep a conversation going is to avoid asking questions that have yes or no answers. For example, if you're selling a service
-                        plan, don't ever ask &ldquo;Are you interested in our 3 or 5 year 
-                        service plan?
-                        2 - One way you can keep a conversation going is to avoid asking questions that have yes or no answers. For example, if you're selling a service
-                        plan, don't ever ask &ldquo;Are you interested in our 3 or 5 year 
-                        service plan?
-                        3 - One way you can keep a conversation going is to avoid asking questions that have yes or no answers. For example, if you're selling a service
-                        plan, don't ever ask &ldquo;Are you interested in our 3 or 5 year 
-                        service plan?
-                        4 - One way you can keep a conversation going is to avoid asking questions that have yes or no answers. For example, if you're selling a service
-                        plan, don't ever ask &ldquo;Are you interested in our 3 or 5 year 
-                        service plan?
-                        5 - One way you can keep a conversation going is to avoid asking questions that have yes or no answers. For example, if you're selling a service
-                        plan, don't ever ask &ldquo;Are you interested in our 3 or 5 year 
-                        service plan?
-                        <!--           <button>Подробнее ></button>-->
-                        </p>
-                        <footer>
-                            <button>Подробнее >>></button>
-                        </footer>
-                        </td>
-                        <aside>
-                            <p>  ****** </p>
-                            <p>  ****** </p>
-                            <p>  ****** </p>
-                        </aside>
-
-                        </tr>
+                                        <b>Дракула / Dracula Untold (2014) </b><br>  
+                                    </a>    		
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    <!--	<separator>***********</separator>-->
+                </nav>
+
+            </section>          
 
 
-                </div>
+            <section id="posts">
+                <article class="post">
 
-            </article>
-        </section>
+                    <div id="clone">
+                        <header class="post_header">
+                            <div class="name">Ярость---</div>
+                            <div class="ratebox">
+                                <div>
+                                    <span>☆<span>☆<span>☆<span>☆<span>☆</span></span></span></span></span>
+                                </div>	  
+                            </div>
+                        </header>
 
+                        <!--                        <img class="imageContent" align="left" src="images/2.jpg" alt="Боргман: Возмутитель спокойствия" title="Боргман: Возмутитель спокойстви">-->
+                        <img class="imageContent" align="left" src="pages/images/2.jpg" alt="Боргман: Возмутитель спокойствия" title="Боргман: Возмутитель спокойстви">
+
+                        <section class="data">
+                            <p class="sec">Категория:</p>
+                            <div class="category">...</div>
+                            <p class="sec">Дата выхода:</p>
+                            <div class="released">...</div>	
+                            <p class="sec">Страна:</p>
+                            <div class="country">...</div> 
+                            <p class="sec">Жанр:</p>
+                            <div class="genre">...</div>					                      	 
+                            <p class="sec">Режиссёр:</p>
+                            <div class="regisser">...</div>                        	 						
+                            <p class="sec">Актёры:</p>
+                            <div class="acters">...</div>												
+                            <p class="sec">Возростная группа:</p>
+                            <div class="age_viewers">...</div>																		
+                            <p class="sec">Продолжительность:</p>
+                            <div class="time_duration">...</div>		
+                            <p class="sec">
+                            <div class="ratingKinopoisk">
+                                <a href='http://www.kinopoisk.ru/film/463897/'><img src='http://rating.kinopoisk.ru/463897.gif' border='0'></a> 
+                            </div>
+                            </p>																												
+
+                        </section>
+                        <section class="descript">
+                            <div class="description">...</div>
+                        </section>
+                        <footer>
+                            <button>Скачать торрент >>></button>
+                        </footer>
+
+
+                        <!--
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <a title="Возмутитель спокойствия (2014) " href="#">
+                                                                    <img class="imageContent" align="left" src="pages/images/2.jpg" alt="Боргман: Возмутитель спокойствия" title="Боргман: Возмутитель спокойствия">
+                                                                    <img class="last" align="left" src="images/2.jpg" alt="Боргман: Возмутитель спокойствия" title="Боргман: Возмутитель спокойстви">
+                            
+                                                                </a>  
+                                                                <table>
+                                                                    <tbody>
+                                                                        <tr> 
+                                                                            <td class="key">
+                                                                                <h5>Категория:</h5>
+                                                                                <h5>Дата выхода: </h5>                                                
+                                                                                <h5>Страна:</h5>
+                                                                                <h5>Жанр:</h5>
+                                                                                <h5>Режиссёр:</h5>
+                                                                                <h5>Актёры:</h5>
+                                                                                <h5>Возростная группа:</h5>
+                                                                                <h5>Продолжительность:</h5>
+                                                                            </td>
+                                                                            <td class="value">
+                                                                                <h5 class="category">---</h5>
+                                                                                <h5 class="released">---</h5>
+                                                                                <h5 class="country">---</h5>
+                                                                                <h5 class="genre">---</h5>
+                                                                                <h5 class="regisser">---</h5>
+                                                                                <h5 class="acters">Неугомонный Шерлок Холмс и его верная спутница и протеже Ватсон возвращаются на телеэкраны в новом 3 сезоне. Нас ждут новые невероятные расследования, где Шерлок всегда найдёт нужные улики и обязательно разыщет преступника.</h5>
+                                                                                <h5 class="age_viewers">---</h5>
+                                                                                <h5 class="time_duration">---</h5>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <table>
+                                                                    <tbody>
+                                                                        <tr> 
+                                                                            <td class="ratingKinopoisk">
+                                                                                <a href='http://www.kinopoisk.ru/film/463897/'><img src='http://rating.kinopoisk.ru/463897.gif' border='0'></a> 
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <p> <big>Описание:</big><b class="description"> Возможно для этого фильма ещё нет описания :( Sorry!------------------------------------------------------------------------------</b>
+                                                               <button>Подробнее ></button>
+                        -->
+                        <!--
+                                                    </p>
+                                                    <footer>
+                                                        <button>Скачать торрент >>></button>
+                                                    </footer>
+                                                    </td>
+                                                    
+                                                                                <aside>
+                                                                                    <p>  ****** </p>
+                                                                                    <p>  ****** </p>
+                                                                                    <p>  ****** </p>
+                                                                                </aside>
+                                                    
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                        -->
+
+
+                    </div>
+                </article>
+            </section>
+        </section>  
 
         <footer id="page_footer">
-            <p>Copyright © 2014 AwesomeCo.</p>
+            <p>© 2015</p>
             <nav>
                 <ul>   
                     <li><a href="#">Home</a></li>

@@ -6,8 +6,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "country")
-public class Country implements Serializable {
+@Table(name = "producer")
+public class Producer implements Serializable{
 
     @Id
     @GeneratedValue(generator = "increment")
@@ -18,22 +18,22 @@ public class Country implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "film_id")
-    private Film filmCountry;
-
-    public Country() {
-    }
-
-    public Country(String name) {
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
+        this.name = name;
+    }
+    
+   @ManyToOne
+    @JoinColumn(name = "film_id")
+    private Film filmProducer;
+
+    public Producer() {
+    }
+
+    public Producer(String name) {
         this.name = name;
     }
 
@@ -45,17 +45,18 @@ public class Country implements Serializable {
         this.id = id;
     }
 
-//    public Film getFilmCountry() {
-//        return filmCountry;
+//    public Film getFilmProducer() {
+//        return filmProducer;
 //    }
 
-    public void setFilmCountry(Film filmCountry) {
-        this.filmCountry = filmCountry;
+    public void setFilmProducer(Film filmProducer) {
+        this.filmProducer = filmProducer;
     }
+
+
 
     @Override
     public String toString() {
         return name;
     }
-
 }

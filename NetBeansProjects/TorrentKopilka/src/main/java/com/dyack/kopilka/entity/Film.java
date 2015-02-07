@@ -1,19 +1,21 @@
 package com.dyack.kopilka.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.*;
+import java.util.*;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @Table(name = "film")
-public class Film implements Serializable {  // ? Serializable
+public class Film implements Serializable{
 
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    @Column(name = "film_id", length = 6, nullable = false)
-    private long id;
+    @Column(name = "id", length = 6, nullable = false)
+    private int id;
 
     @Column(name = "name")
     private String name;
@@ -22,41 +24,72 @@ public class Film implements Serializable {  // ? Serializable
     private String originalName;
 
     @Column(name = "age_group")
-    private Integer age_group;
+    private int ageGroup;
 
     @Column(name = "duration")
-    private Integer duration;
+    private int duration;
 
     @Column(name = "description")
     private String description;
-
+    
+    @Column(name = "downloads_count")
+    private int downloadsCount;
+    
+    @Column(name = "image_prefix")
+    private String imagePrefix;
+    
     @Column(name = "add_date")
-    private Date add_date;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date addDate;
 
     @Column(name = "release_date")
-    private Date release_date;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date releaseDate;
+    
+    @OneToOne
+    @JoinColumn(name = "category_id")
+    Category category;
+    
+    @OneToOne
+    @JoinColumn(name = "star_id")
+    Star star;
+    
+    @OneToMany(targetEntity = Genre.class, mappedBy = "filmGenre", fetch = FetchType.EAGER) // tolko LAZI - genres v etom toString vizvat nelzya
+    @Embedded
+    private Set<Genre> genres;
 
-    @Column(name = "downloads_count")
-    private Integer downloads_count;
-
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "category_category_id")
-    private Integer category_category_id;
-
-    @Column(name = "image_image_id")
-    private Integer image_image_id;
-
-    @Column(name = "star_star_id")
-    private Integer star_star_id;
+    @OneToMany(targetEntity = Acter.class, mappedBy = "filmActer", fetch = FetchType.EAGER) // esli LAZY - to acters.toString ne rabotaet
+    @Embedded 
+    private Set<Acter> acters;
+    
+    @OneToMany(targetEntity = Producer.class, mappedBy = "filmProducer", fetch = FetchType.EAGER) 
+    @Embedded
+    private Set producers;
+    
+    @OneToMany(targetEntity = Country.class, mappedBy = "filmCountry", fetch = FetchType.EAGER) 
+    @Embedded
+    private Set countrys;
+    
+    @OneToMany(targetEntity = Trailer.class, mappedBy = "filmTrailer", fetch = FetchType.EAGER) 
+    @Embedded
+    private Set trailers;
+    
+    @OneToMany(targetEntity = Comment.class, mappedBy = "filmComment", fetch = FetchType.EAGER) 
+    @Embedded
+    private Set comments;
+    
+    @OneToMany(targetEntity = Torrent.class, mappedBy = "filmTorrent", fetch = FetchType.EAGER) 
+    @Embedded
+    private List torrents;
 
     public Film() {
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -76,19 +109,19 @@ public class Film implements Serializable {  // ? Serializable
         this.originalName = originalName;
     }
 
-    public Integer getAge_group() {
-        return age_group;
+    public int getAgeGroup() {
+        return ageGroup;
     }
 
-    public void setAge_group(Integer age_group) {
-        this.age_group = age_group;
+    public void setAgeGroup(int ageGroup) {
+        this.ageGroup = ageGroup;
     }
 
-    public Integer getDuration() {
+    public int getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 
@@ -100,53 +133,134 @@ public class Film implements Serializable {  // ? Serializable
         this.description = description;
     }
 
-    public Date getAdd_date() {
-        return add_date;
+    public int getDownloadsCount() {
+        return downloadsCount;
     }
 
-    public void setAdd_date(Date add_date) {
-        this.add_date = add_date;
+    public void setDownloadsCount(int downloadsCount) {
+        this.downloadsCount = downloadsCount;
     }
 
-    public Date getRelease_date() {
-        return release_date;
+    public String getImagePrefix() {
+        return imagePrefix;
     }
 
-    public void setRelease_date(Date release_date) {
-        this.release_date = release_date;
+    public void setImagePrefix(String imagePrefix) {
+        this.imagePrefix = imagePrefix;
     }
 
-    public Integer getDownloads_count() {
-        return downloads_count;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setDownloads_count(Integer downloads_count) {
-        this.downloads_count = downloads_count;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    public Integer getCategory_category_id() {
-        return category_category_id;
+    public Set<Genre> getGenres() {
+        return genres;
     }
 
-    public void setCategory_category_id(Integer category_category_id) {
-        this.category_category_id = category_category_id;
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
     }
 
-    public Integer getImage_image_id() {
-        return image_image_id;
+    public Set<Acter> getActers() {
+        return acters;
     }
 
-    public void setImage_image_id(Integer image_image_id) {
-        this.image_image_id = image_image_id;
+    public void setActers(Set<Acter> acters) {
+        this.acters = acters;
     }
 
-    public Integer getStar_star_id() {
-        return star_star_id;
+    public Set getProducers() {
+        return producers;
     }
 
-    public void setStar_star_id(Integer star_star_id) {
-        this.star_star_id = star_star_id;
+    public void setProducers(Set producers) {
+        this.producers = producers;
     }
 
+    public Set getCountrys() {
+        return countrys;
+    }
+
+    public void setCountrys(Set countrys) {
+        this.countrys = countrys;
+    }
+
+    public Set getTrailers() {
+        return trailers;
+    }
+
+    public void setTrailers(Set trailers) {
+        this.trailers = trailers;
+    }
+
+    public Set getComments() {
+        return comments;
+    }
+
+    public void setComments(Set comments) {
+        this.comments = comments;
+    }
+
+    public Star getStar() {
+        return star;
+    }
+
+    public void setStar(Star star) {
+        this.star = star;
+    }
+
+    public Date getAddDate() {
+        return addDate;
+    }
+
+    public void setAddDate(Date addDate) {
+        this.addDate = addDate;
+    }
+
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public List getTorrents() {
+        return torrents;
+    }
+
+    public void setTorrents(List torrents) {
+        this.torrents = torrents;
+    }
+
+    @Override
+    public String toString() {
+        return '{' + "-id=" + id + ", name=" + name + ", originalName=" + originalName + 
+                ", ageGroup=" + ageGroup + ", duration=" + duration + ", description=" + description + ", "
+                + "downloadsCount=" + downloadsCount + ", imagePrefix=" + imagePrefix + ", "
+                + "addDate=" + addDate + ", releaseDate=" + releaseDate + "\ncategory=" + category + ", star=" + star +
+                "\nacters=" + acters + ",\ngenres=" + genres + '}';
+    }
+
+//    @Override
+//    public String toString() {
+//        return "Film{" + "id=" + id + ", name=" + name + ", originalName=" + originalName + 
+//                "\nageGroup=" + ageGroup + ", duration=" + duration + ", description=" + description + 
+//                "\ndownloadsCount=" + downloadsCount + ", imagePrefix=" + imagePrefix + 
+//                "\naddDate=" + addDate + ", releaseDate=" + releaseDate + ", category=" + category + 
+//                "\nstar=" + star + ", genres=" + genres + ", acters=" + acters + ", producers=" + producers + 
+//                "\ncountrys=" + countrys + ", trailers=" + trailers + ", comments=" + comments + 
+//                "\ntorrents=" + torrents + '}';
+//    }
+
+
+
+
+    
+    
 
 }
