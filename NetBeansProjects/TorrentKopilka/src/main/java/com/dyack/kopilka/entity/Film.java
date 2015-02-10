@@ -38,6 +38,9 @@ public class Film implements Serializable{
     @Column(name = "image_prefix")
     private String imagePrefix;
     
+    @Column(name = "online")
+    private String online;
+    
     @Column(name = "add_date")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date addDate;
@@ -195,6 +198,14 @@ public class Film implements Serializable{
 
     public void setTrailers(Set trailers) {
         this.trailers = trailers;
+    }
+
+    public String getOnline() {
+        return online;
+    }
+
+    public void setOnline(String online) {
+        this.online = online;
     }
 
     public Set getComments() {

@@ -25,7 +25,7 @@ public class TestDataBaseConfig {
     private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "org.hibernate.dialect.MySQLDialect";
     private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "true";
     private static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "com.dyack.kopilka.entity";
-    private static final String PROPERTY_NAME_HIBERNATE_HBM2DDL_AUTO = "create";
+    private static final String PROPERTY_NAME_HIBERNATE_HBM2DDL_AUTO = "update";
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {

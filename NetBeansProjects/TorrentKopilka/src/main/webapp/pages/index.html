@@ -3,17 +3,11 @@
     <head>
         <meta charset="utf-8">
 
-
         <link rel="stylesheet" href="./pages/css/style.css"> 
         <link rel="stylesheet" href="./pages/css/style2.css">
-
-
-
-        <!--
-                        <link rel="stylesheet" href="css/style.css"> 
-                        <link rel="stylesheet" href="css/style2.css">
-        -->
-
+     
+<!--                        <link rel="stylesheet" href="css/style.css"> 
+                        <link rel="stylesheet" href="css/style2.css">-->
 
         <title>Копилка! HTML</title>
 
@@ -22,22 +16,16 @@
         <script type="text/javascript" src="./pages/js/index.js"></script>
 
 
-
-        <!--
-                        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-                        <script type="text/javascript" src="js/index.js"></script>
-        -->
+<!--                        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+                        <script type="text/javascript" src="js/index.js"></script>-->
+        
 
     </head>
 
     <body>
         <header id="page_header"> 
             <h1>Копилка!</h1>
-
             -----------------------------------------------------------------------------------------<input id="getLast" type="button" value="getLast">
-            ***
-            <p id="result_all"></p>
-
         </header>
 
 
@@ -56,7 +44,7 @@
 
 
 
-        <nav class="naws">
+<!--        <nav class="naws">
             <ul class="fancyNav">
                 <li id="home"><a href="#home" class="homeIcon">Home</a></li>
                 <li id="news"><a href="#news">Последние добавленные</a></li>
@@ -64,12 +52,12 @@
                 <li id="services"><a href="#services">Топ по отзывам</a></li>
                 <li id="contact"><a href="#contact">Топ по лайкам</a></li>
 
-                <!--
+                
                                       <li id="services"><a href="#services">Services</a></li>
                                 <li id="contact"><a href="#contact">Contact us</a></li>
-                -->
+                
             </ul>
-        </nav>
+        </nav>-->
 
 
 
@@ -117,8 +105,8 @@
                             <tr>
                                 <td>
                                     <a title="Дракула / Dracula Untold (2014) " href="#">
-                                        <img hspace="3" vspace="3" width="80" align="left" title="Профессионал (2014) " alt="Профессионал (2014) " src="pages/images/fury.jpg">
-                                        <!--                                        <img hspace="3" vspace="3" width="80" align="left" title="Профессионал (2014) " alt="Профессионал (2014) " src="images/fury.jpg">-->
+             <img hspace="3" vspace="3" width="80" align="left" title="Профессионал (2014) " alt="Профессионал (2014) " src="pages/images/fury.jpg">
+                <!--<img hspace="3" vspace="3" width="80" align="left" title="Профессионал (2014) " alt="Профессионал (2014) " src="images/fury.jpg">-->
 
                                         <b>Дракула / Dracula Untold (2014) </b><br>  
                                     </a>    		
@@ -131,12 +119,12 @@
             </section>          
 
 
-            <section id="posts">
+            <section id="posts" class="clone">
                 <article class="post">
 
                     <div id="clone">
                         <header class="post_header">
-                            <div class="name">Ярость---</div>
+                            <div id="name" class="name">Ярость---</div>
                             <div class="ratebox">
                                 <div>
                                     <span>☆<span>☆<span>☆<span>☆<span>☆</span></span></span></span></span>
@@ -144,7 +132,7 @@
                             </div>
                         </header>
 
-                        <!--                        <img class="imageContent" align="left" src="images/2.jpg" alt="Боргман: Возмутитель спокойствия" title="Боргман: Возмутитель спокойстви">-->
+            <!--<img class="imageContent" align="left" src="images/2.jpg" alt="Боргман: Возмутитель спокойствия" title="Боргман: Возмутитель спокойстви">-->
                         <img class="imageContent" align="left" src="pages/images/2.jpg" alt="Боргман: Возмутитель спокойствия" title="Боргман: Возмутитель спокойстви">
 
                         <section class="data">
@@ -168,91 +156,85 @@
                             <div class="ratingKinopoisk">
                                 <a href='http://www.kinopoisk.ru/film/463897/'><img src='http://rating.kinopoisk.ru/463897.gif' border='0'></a> 
                             </div>
-                            </p>																												
+                            </p>
+                            <a class="onlineButton" href="#" target="_blank">
+                            	<b>Смотреть Online ></b>
+                            </a>																												
 
                         </section>
                         <section class="descript">
-                            <div class="description">...</div>
+                            <div>ggggggggggggg  gggggggggggggggggggggg ggggggggggggggggggggggggg ggggggggggggggggggggggggggg gggggggggggggggggggggggggg gggggggggggggggggggggggg  gggggggggggggggggggggg ggggggggggggggggggggggggg ggggggggggggggggggggggggggg gggggggggggggggggggggggggg gggggggggggggggggggggggg  gggggggggggggggggggggg ggggggggggggggggggggggggg ggggggggggggggggggggggggggg gggggggggggggggggggggggggg gggggggggggggggggggggggg gggggggggggg</div>
                         </section>
                         <footer>
-                            <button>Скачать торрент >>></button>
+                            <a class="downloadButton" >
+                            	<b>Подробнее, Скачать торрент ></b>
+                            </a>
                         </footer>
 
+<section id="more" class="more">
+<!--<object id="youtubeColorRu" width="560" height="316">
+	<param name="movie" value="http://youtu.be/Kd0mHntFGH0"></param>
+	<param name="allowFullScreen" value="true"></param>
+	<param name="allowscriptaccess" value="always"></param>
+	<embed src="http://www.youtube.com/v/Kd0mHntFGH0?version=2&color2=0x2E7A05&border=0&egm=1&rel=0&showinfo=0&showsearch=0&hd=1" type="application/x-shockwave-flash" width="560" height="316" allowscriptaccess="always" allowfullscreen="true" ></embed>
+</object>-->
+<br><br><br>
 
-                        <!--
-                                                <table>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <a title="Возмутитель спокойствия (2014) " href="#">
-                                                                    <img class="imageContent" align="left" src="pages/images/2.jpg" alt="Боргман: Возмутитель спокойствия" title="Боргман: Возмутитель спокойствия">
-                                                                    <img class="last" align="left" src="images/2.jpg" alt="Боргман: Возмутитель спокойствия" title="Боргман: Возмутитель спокойстви">
-                            
-                                                                </a>  
-                                                                <table>
-                                                                    <tbody>
-                                                                        <tr> 
-                                                                            <td class="key">
-                                                                                <h5>Категория:</h5>
-                                                                                <h5>Дата выхода: </h5>                                                
-                                                                                <h5>Страна:</h5>
-                                                                                <h5>Жанр:</h5>
-                                                                                <h5>Режиссёр:</h5>
-                                                                                <h5>Актёры:</h5>
-                                                                                <h5>Возростная группа:</h5>
-                                                                                <h5>Продолжительность:</h5>
-                                                                            </td>
-                                                                            <td class="value">
-                                                                                <h5 class="category">---</h5>
-                                                                                <h5 class="released">---</h5>
-                                                                                <h5 class="country">---</h5>
-                                                                                <h5 class="genre">---</h5>
-                                                                                <h5 class="regisser">---</h5>
-                                                                                <h5 class="acters">Неугомонный Шерлок Холмс и его верная спутница и протеже Ватсон возвращаются на телеэкраны в новом 3 сезоне. Нас ждут новые невероятные расследования, где Шерлок всегда найдёт нужные улики и обязательно разыщет преступника.</h5>
-                                                                                <h5 class="age_viewers">---</h5>
-                                                                                <h5 class="time_duration">---</h5>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                                <table>
-                                                                    <tbody>
-                                                                        <tr> 
-                                                                            <td class="ratingKinopoisk">
-                                                                                <a href='http://www.kinopoisk.ru/film/463897/'><img src='http://rating.kinopoisk.ru/463897.gif' border='0'></a> 
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                                <p> <big>Описание:</big><b class="description"> Возможно для этого фильма ещё нет описания :( Sorry!------------------------------------------------------------------------------</b>
-                                                               <button>Подробнее ></button>
-                        -->
-                        <!--
-                                                    </p>
-                                                    <footer>
-                                                        <button>Скачать торрент >>></button>
-                                                    </footer>
-                                                    </td>
-                                                    
-                                                                                <aside>
-                                                                                    <p>  ****** </p>
-                                                                                    <p>  ****** </p>
-                                                                                    <p>  ****** </p>
-                                                                                </aside>
-                                                    
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                        -->
+<div id="wrapperTable" class="wrapperTable">
+    <div class="table">
+        <div class="rowHider">
+            <div class="col">kachestvo</div>
+            <div class="col">format</div>
+            <div class="col">video codec<br>video </div>
+            <div class="col">razmer</div>
+            <div class="col">Perevod</div>
+            <div class="col">subtitles</div>
+            <div class="col">audio codec<br> audio</div>
+            <div class="col">skachat</div>
+        </div>
+    </div>
+    
+    <div id="tableClones" class="tableClones"></div>
+    
+    <div id="tableClone" class="tableClone">
+        <div class="row">
+            <div class="col quality">...</div>
+            <div class="col format">...</div>
+            <div class="col video_codec_video">...</div>
+            <div class="col sizeFile">...</div>
+            <div class="col audio_transfer">...</div>
+            <div class="col subtitles">...</div>
+            <div class="col audio_codec_audio">...</div>
+            <div class="col torrent">
+				<a href="#">
+					<!--<img width="30" align="center" title="Скачать" alt="Скачать" src="images/utorrent-logo.png">-->
+                                        <img width="30" align="center" title="Скачать" alt="Скачать" src="pages/images/utorrent-logo.png">
+				</a>
+            </div>
+
+        </div>       
+    </div>
+</div>
+	
+		<div class="cadriIzFilma"></div>
+		<div class="otzivi"></div>
+</section>
+
 
 
                     </div>
                 </article>
             </section>
         </section>  
+        
+        <div id="up">
+        	<a href="#" id="toUp">
+        		<img src="pages/images/top2.png" alt="top">
+        	</a>
+        </div>
 
         <footer id="page_footer">
-            <p>© 2015</p>
+            <p>Copyright © 2015</p>
             <nav>
                 <ul>   
                     <li><a href="#">Home</a></li>

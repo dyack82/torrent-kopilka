@@ -4,13 +4,10 @@ body{
     /*  font-family: Arial, "MS Trebuchet", sans-serif;*/
     font: normal 13px/17px Tahoma, "Trebuchet MS", Helvetica, sans-serif;
     /*  width: 960px;*/
-    background: url(../images/grey_wash_wall.png);	
-    background-attachment: fixed;
+/*    background: url(../images/grey_wash_wall.png);	*/
+   background-color: black;
+	background-attachment: fixed;
 }
-
-/*p{ margin: 0 0 20px 0;}*/
-
-/*p, li{ line-height: 20px; }*/
 
 #page_header{ 
     background: yellow;
@@ -24,7 +21,6 @@ body{
 #wrapper{ 
 	display: table;
     width: 1000px; 
-/*	min-width: 1000px;*/
 	border: 3px solid blue;
 margin-left: auto;
 	margin-right: auto;
@@ -50,6 +46,40 @@ margin-left: auto;
     display: inline;
 }
 
+.onlineButton, .downloadButton{
+	padding: 0 15px;
+	text-shadow: 0 1px 0 #5f9d06;
+	float: right;
+	text-decoration: none;
+	margin: 0 10px;
+	background-color: #76b41a;
+	border-radius: 7px;	
+	display: block;
+}
+.onlineButton:hover, .downloadButton:hover {
+	background-color: #46b41a;
+        cursor: pointer;
+}
+.downloadButton{
+	margin-top: -35px;
+}
+.onlineButton{
+	margin-top: -50px;
+}
+b{
+	line-height: 30px;
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -71,6 +101,7 @@ span:hover:before {
     content: "\2605";
     position: absolute;
     color: red;
+
 }
 
 
@@ -148,28 +179,39 @@ td.key h5 {
 }
 
 img {
-    padding: 3px;	
+    /*padding: 3px;*/	
     cursor: pointer;
     display: inline-block;
     background: yellow;
 }
 
-.post img {
-    margin-right: 15px;	
-	margin: 5px;
+.post img {	
+	margin: 5px 5px 1px 5px;
 }
 .data{ 
 	background-color: #9eaeae;
 	margin-left: 0px;
-	height: 325px;
-	width: 550px;
+	height: 230px;
+	width: 552px;
 	display: inline-table;
+	padding-top: 10px;
 }
 .descript{
 	background-color: #9eae00;
-	min-height: 20px;
-	width: 780px;
-	margin-left: 5px;
+	height: 55px;
+	width: 790px;
+	margin: 0 5px 40px 0;
+	overflow: hidden;
+	display: inline;
+	
+/*
+		background-color: #9eaeae;
+	margin-left: 0px;
+	height: 230px;
+	width: 550px;
+	display: inline-table;
+	padding-top: 10px;
+*/
 }
 .sec{
 	display: inline-block;
@@ -195,12 +237,84 @@ img {
 	
 }
 .ratingKinopoisk{
-/*	display: inline-block;*/
-	margin: -10px 0 0 0;
+	margin-top: 10px;
+	background-color: red;
+        display: table;
+	margin: -15px 0 0 30px;
+	position: inherit;
+}
+.more {
+	/*display: none;*/
+	position: relative;
+	background-color: cyan;
+	min-height: 200px;
+	margin: 0 5px;
+	
+}
+#youtubeColorRu{
+        margin: 0 0 0 110px;
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------- to Top----------------------------------------------------------------*/
+#up{
+	
+}
+#toUp{
+/*	cursor: pointer;*/
+	position: fixed;
+	bottom: 40px;
+	right: 30px;
+}
+#toUp img{
+	opacity: 0.3;
+	
+}
+#toUp img:hover{
+	opacity: 0.6;
+}
+
+/*-------------------------- table div --------------------------------------------------------------*/
+.wrapperTable{
+
+
+}
+.table{
+   display:table;   
+} 
+.wrapperTable .row{
+   display:table-row; 
+   text-align:center; 
+   width: 100px; 
+} 
+.wrapperTable .col{
+    display:table-cell; 
+    border:1px solid #aeaeae;
+    width: 100px;
+} 
+.rowHider{
+    background-color: #8888ff;
+}
+/*----------------------------------------------------------------------------------------*/
 
 
 a {
@@ -230,23 +344,30 @@ border-bottom: 5px solid cyan ;
 
 #clone {
     border-bottom: 5px solid black;
-	min-height: 450px;
+	min-height: 375px;
 }
 .imageContent {
 	height: 310px;
 }
-
-.description {
-    height: 140px;
-    overflow: hidden;
-display: initial;
+#clone img{
+margin: 3px 3px 0 3px;	
 }
 
+/*.description {*/
+/*    height: 140px;*/
+/*    overflow: hidden;*/
+/*display: initial;*/
+/*}*/
+
+
+/*
 .description button {
     background: cyan;
     text-align: right;
     position: absolute;
 }
+*/
+
 
 
 tbody .top tr {
@@ -257,10 +378,6 @@ tbody .top tr {
 tbody .top tr td {
     background: #eaeaea;	
     border-bottom: 3px solid red;
-}
-
-b {
-    background: yellow;	
 }
 
 article .post {
