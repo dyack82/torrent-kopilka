@@ -27,7 +27,7 @@ public class Comment implements Serializable, Comparable {
     private String username;
 
     @Column(name = "add_date")
-    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date addDate;
     
     public Comment() {
@@ -66,7 +66,7 @@ public class Comment implements Serializable, Comparable {
     }
 
 //    public Film getFilmComment() {
-//        return filmComment;
+//        // NOP
 //    }
 
     public void setFilmComment(Film filmComment) {

@@ -240,9 +240,9 @@ public class Film implements Serializable{
         this.releaseDate = releaseDate;
     }
 
-    public List getTorrents() {
-        return torrents;
-    }
+//    public List getTorrents() {
+//        return torrents;
+//    }
 
     public void setTorrents(List torrents) {
         this.torrents = torrents;

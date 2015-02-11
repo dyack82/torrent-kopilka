@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 
 @Service
@@ -197,7 +198,15 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public Page<Film> findLastAdded(int amount) {
-        final PageRequest page = new PageRequest(0, amount, Direction.ASC, "id");//1-x
+        final PageRequest page = new PageRequest(0, amount, Direction.ASC, "id");
         return filmRepository.findAll(page);
     }
+
+    @Override
+    public List<Torrent> findTorrentByFilmId(int id) {
+//        final PageRequest page = new PageRequest(0, 2, Sort.Direction.ASC, "id");
+//        return torrentRepository.findAll(page);
+        return torrentRepository.findTorrentByFilmId(id);
+    }
+
 }

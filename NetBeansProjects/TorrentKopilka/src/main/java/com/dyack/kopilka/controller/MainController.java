@@ -3,6 +3,7 @@ package com.dyack.kopilka.controller;
 import com.dyack.kopilka.controller.request.RequestAddContent;
 import com.dyack.kopilka.entity.Country;
 import com.dyack.kopilka.entity.Film;
+import com.dyack.kopilka.entity.Torrent;
 import com.dyack.kopilka.entity.User;
 import com.dyack.kopilka.service.ContentService;
 import java.util.List;
@@ -20,6 +21,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -56,11 +58,18 @@ public class MainController {
         requestAddContent.SaveFilm(contentService, request);
     }
 
-    @RequestMapping(value = "/findLastAdded/{amount}", method = RequestMethod.GET)
+    @RequestMapping(value = "/getLastAdded/{amount}", method = RequestMethod.GET)
     public @ResponseBody
     Page<Film> getById(@PathVariable int amount) {
-        System.out.println("==== //{id} -- findAll ====");
+        System.out.println("==== /getLastAdded/{amount} ====");
         return contentService.findLastAdded(amount);
+    }
+
+    @RequestMapping(value = "/getTorrentByFilmId", method = RequestMethod.GET)
+    public @ResponseBody
+    List<Torrent> getTorrentByFilmId(@RequestParam int id) {
+        System.out.println("==== /getTorrentByFilmId ==== id = " + id);
+        return contentService.findTorrentByFilmId(id);
     }
 
 }

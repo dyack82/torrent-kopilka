@@ -52,6 +52,6 @@ public interface ContentService {
     public List<Category> getCategoryByFilmId(int id);
     
     Page<Film> findLastAdded(int amount); // id - kol-vo vivodimih suchnostey
-
+    List<Torrent> findTorrentByFilmId(int id);
 
 }

@@ -244,7 +244,7 @@ img {
 	position: inherit;
 }
 .more {
-	/*display: none;*/
+	display: none;
 	position: relative;
 	background-color: cyan;
 	min-height: 200px;

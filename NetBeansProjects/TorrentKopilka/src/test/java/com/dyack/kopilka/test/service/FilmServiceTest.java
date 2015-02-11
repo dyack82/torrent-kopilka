@@ -26,6 +26,18 @@ public class FilmServiceTest {
 
     @Test
     public void testSaveFilm() throws Exception {
+        
+        
+        
+//                List<Object> respAll = new ArrayList<>();
+//        respAll.add(contentService.findTorrentByFilmId(1));
+//        respAllFilms.add(contentService.getMinFilmById(id));
+//        respAllFilms.add(contentService.getCategoryByFilmId(id));
+        System.out.println(contentService.findTorrentByFilmId(1));
+//        for (Object tmp : respAll) {
+//            System.out.println("---" + respAll.get(0).g);
+//        }
+//        System.out.println("** " + contentService.findTorrentByFilmId(1));
 
 //        Category category = new Category();
 //        category.setName("’удожественный фильм");

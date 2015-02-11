@@ -16,9 +16,9 @@ $(function () {
         }
     });
 
-    $('.downloadButton').click(function () {        // KLICK - RAZVOROT
-        var $thisIndex = $('.downloadButton').index(this);
-        $('.more').eq($thisIndex).toggle();
+//    $('.downloadButton').click(function () {        // KLICK - RAZVOROT
+//        var $thisIndex = $('.downloadButton').index(this);
+//        $('.more').eq($thisIndex).toggle();
         /*-----------------------  NE UDALAT  -----------------------------------------------------*/
 //                console.log($thisIndex);
 //                    var amount = data.content[i].torrents.length;
@@ -27,8 +27,7 @@ $(function () {
 //                        $('#tableClones').append($tableClone);
 //                        console.log('**');
 //                    }
-
-    });
+//    });
 
 
 //                console.log();
@@ -51,12 +50,12 @@ $(function () {
 //    });
 
 
-    $('#getLast').click(function () {
-//    $(function () {
+//    $('#getLast').click(function () {
+    $(function () {
 
 //        var inputText = $("#input_str").val();
         $.ajax({
-            url: 'findLastAdded/10',
+            url: 'getLastAdded/10',
             type: 'GET',
             dataType: 'json',
             contentType: 'application/json; charset=windows-1251',
@@ -66,7 +65,7 @@ $(function () {
 //            }),
             async: true,
             success: function (data) {
-//                console.log(data);
+                console.log(data);
                 var countElements = data.numberOfElements;
                 var arrNemes = "";
 //                console.log("= = " + data.content[0].countrys[0].id);
@@ -127,41 +126,41 @@ $(function () {
                     if (data.content[i].online) {
                         $(".onlineButton").eq(i).attr('href', data.content[i].online);
                     }
-/*----------------------------------- pravilnoe klonirovanie -----  vstsvit v drugoe mesto -----------------------------------------------------*/
-                    var amount = data.content[i].torrents.length;
-                    var $tableClone = $('#tableClone').clone();
-                    for (var j = 0; j < amount; j++) {                      
-                        $('#tableClones').append($tableClone);
-                    }
-                    $('#wrapperTable > #tableClone').hide(4000); // DEL - tu s kotoroy kopirovali
-/*--------------------------------------------------------------------------------------------*/
-                    if (i > 0) {
-//                        continue;
-                    }
-//                    console.log('--Q - i = ' + i + " tmpTor = " );
-//                    $(".tableClone .quality").eq(i).text('1');
-//                    console.log('---F - i = ' + i + " tmpTor = ");
-//                    $(".tableClone .format").eq(i).text('2');
-
-
-                    arrNemes = "";
-                    for (var tmpTor in data.content[i].torrents) {
-//                        console.log('--i = ' + i); 
-//                        if(tmpTor == 1){
-//                            break;
-//                        }
-//                    console.log('--tmpTor = ' + tmpTor);    
-                        arrNemes += data.content[i].torrents[tmpTor].quality + ", ";
-                        console.log('--Q - i = ' + i + " tmpTor = " + tmpTor);
-                        $(".quality").eq(i).text(arrNemes);
-                        arrNemes = "";
-                        arrNemes += data.content[i].torrents[tmpTor].format + ", ";
-                        console.log('---F - i = ' + i + " tmpTor = " + tmpTor);
-                        $(".format").eq(i).text(arrNemes);
-                        arrNemes = "";
-                        break;
-                    }
-/*-------------------------------------------------------------------------------------------------------*/
+                    /*----------------------------------- pravilnoe klonirovanie -----  vstsvit v drugoe mesto -----------------------------------------------------*/
+//                    var amount = data.content[i].torrents.length;
+//                    var $tableClone = $('#tableClone').clone();
+//                    for (var j = 0; j < amount; j++) {                      
+//                        $('#tableClones').append($tableClone);
+//                    }
+//                    $('#wrapperTable > #tableClone').hide(4000); // DEL - tu s kotoroy kopirovali
+///*--------------------------------------------------------------------------------------------*/
+//                    if (i > 0) {
+////                        continue;
+//                    }
+////                    console.log('--Q - i = ' + i + " tmpTor = " );
+////                    $(".tableClone .quality").eq(i).text('1');
+////                    console.log('---F - i = ' + i + " tmpTor = ");
+////                    $(".tableClone .format").eq(i).text('2');
+//
+//
+//                    arrNemes = "";
+//                    for (var tmpTor in data.content[i].torrents) {
+////                        console.log('--i = ' + i); 
+////                        if(tmpTor == 1){
+////                            break;
+////                        }
+////                    console.log('--tmpTor = ' + tmpTor);    
+//                        arrNemes += data.content[i].torrents[tmpTor].quality + ", ";
+//                        console.log('--Q - i = ' + i + " tmpTor = " + tmpTor);
+//                        $(".quality").eq(i).text(arrNemes);
+//                        arrNemes = "";
+//                        arrNemes += data.content[i].torrents[tmpTor].format + ", ";
+//                        console.log('---F - i = ' + i + " tmpTor = " + tmpTor);
+//                        $(".format").eq(i).text(arrNemes);
+//                        arrNemes = "";
+//                        break;
+//                    }
+                    /*-------------------------------------------------------------------------------------------------------*/
 //                    }
 
 
@@ -169,7 +168,7 @@ $(function () {
 
 
 
-                    arrNemes = "";
+//                    arrNemes = "";
 //                    var amount = data.content[i].torrents.length;
 //                    for (var x = 0; x < amount; x++) {
 //                        console.log("*");
@@ -245,39 +244,90 @@ $(function () {
                 }
             },
             error: function (jqXHR) {
-                console.log('Error!+++' + data);
+                console.log('Error!+++' + jqXHR);
                 alert('Error!+++' + jqXHR.toString()); // ?????????
             }
         });
     });
+    /***************************************************************************************************************************/
+  /******************************************  TORRENT  *********************************************************************************/
+  /***************************************************************************************************************************/
+
+    $('.downloadButton').click(function () {        // podgrugaem torrent po ID
+        var $thisIndex = $('.downloadButton').index(this);
+        var $thisId = $(this).attr('id');
+        var arrData;
+        
+//--------------------------  RAZVOROT - SVOROT  -----------------------------------------------------
+        if($('.more').eq($thisIndex).css('display') === 'none' ){   
+            $('.more').eq($thisIndex).css({ display: 'block' });
+            console.log('none -> block');
+        }
+        else if($('.more').eq($thisIndex).css('display') === 'block' ){
+            $('.more').eq($thisIndex).css({ display: 'none' });
+            console.log('  block -> none');
+            return;
+        }
+//      $('.more').eq($thisIndex).toggle();            // NE ISPOLZOVAT !!! // KLICK - SVOROT-RAZVOROT  
+ //---------------------------------------------------------------------------------------------------       
+        $.ajax({
+            url: 'getTorrentByFilmId',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json; charset=windows-1251',
+            mimeType: 'application/json',
+            data: ({
+                id: $thisId
+            }),
+            async: true,
+            success: function (data) {
+                console.log(data);
+/*----------------------------------  clone  -------------------------------------------*/
+                    var amount = data.length;
+                    for (var j = 0; j < amount; j++) {      
+                        var $tableClone = $('#wrapperTable > #tableClone').eq($thisIndex).clone();
+                        $('#wrapperTable > #tableClones').eq($thisIndex).append($tableClone);                       
+                    }   
+                    $('#wrapperTable > #tableClone').eq($thisIndex).hide(); // DEL - tu s kotoroy kopirovali
+/*---------------------------------------------------------------------------------------*/
+//                console.log('***************');
+                arrData = "";
+                    for (var tmpTor in data) {
+                        arrData += data[tmpTor].format + ", ";  // DOSTAEM PRAVILNO                     
+                        var $tableClones = $('#wrapperTable > #tableClones').eq($thisIndex);   
+                        var $tableClone = $tableClones.children("#tableClone").eq(tmpTor); // $tableClone - KONKRETNAYA STROKA
+                        var $row = $tableClone.children('.row');
+                         var $format = $row.children('.format');
+                        $format.text(arrData);
+                        arrData = "";                  
+                    }
 
 
-//                                                               
-//                                                    
-//                                                    <h3 class="acters">---</h3>
-//                                                    <h3 class="age_viewers">---</h3>
-//                                                    <h3 class="time_duration">---</h3>
 
 
-//        $('#getAll').click(function () { 
-////        var inputText = $("#input_str").val();
-//        $.ajax({
-//            url: 'getAll',
-//            type: 'GET',
-//            dataType: 'json',
-//            contentType: 'application/json',
-//            mimeType: 'application/json',
-//            data: ({
-//                text: "inputTextS"
-//            }),
-//            success: function (data) {
-//                var result = 'id = ' + data.id + ', name = ' + data.name + ', released = ' + data.released + ', ';
-//                $("#result_all").text(result).css({background: 'cyan'});
-//                $(".name").text("Name : " + data.name);
-//                $(".released").text('Released : ' + data.released);
-//            }
-//        });
-//    });
+
+                
+            },
+            error: function (jqXHR) {
+                console.log('Error!+++' + jqXHR);
+                alert('Error!+++' + jqXHR.toString()); 
+            }
+
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -287,33 +337,4 @@ $(function () {
 
 
 });
-//    $('#getForecast').click(function () {
-//      $.ajax({
-//        url: 'film/titanic',
-//        data: ({resp : "re"}),
-//        success: function(data) {
-//          $('.block').html(data).css({background: 'pink'});
-//          
-//          alert(r);
-//        }
-//      };
-
-//    });
-//    $('#getForecast').click( function() {
-//        var data = { controller: "film", parametr: "all", backgroung: "yellow" };
-//      $.get( "film", success, "html" );
-//    } );
-// 
-//    function success( data ) {
-//
-//    $('body').css({                  
-//        background: 'blue'
-//    });
-//
-//    
-//    alert(data.name);
-// 
-//   };
-
-
 

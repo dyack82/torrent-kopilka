@@ -132,9 +132,9 @@ public class Torrent implements Serializable{
         this.torrentLink = torrentLink;
     }
 
-//    public Film getFilmTorrent() {
-//        return filmTorrent;
-//    }
+                public Film getFilmTorrent() {
+                    return filmTorrent;
+                }
 
     public void setFilmTorrent(Film filmTorrent) {
         this.filmTorrent = filmTorrent;
