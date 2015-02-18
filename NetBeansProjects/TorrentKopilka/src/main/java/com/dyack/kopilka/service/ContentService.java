@@ -7,51 +7,56 @@ import org.springframework.data.domain.Page;
 
 public interface ContentService {
 
-    Film addFilm(Film film);
-    void delete(int id);
-    Film getById(int id);
-    Film getByName(String name);
-    Film editFilm(Film film);
-    List<Film> getAll();
+    public Film addFilm(Film film);
+    public void delete(int id);
+    public Film getById(int id);
+    public Film getByName(String name);
+    public Film editFilm(Film film);
+    public List<Film> getAll();
 
-    Acter addActer(Acter acter);   
-    Category addCategory(Category category);
-    Producer addProducer(Producer producer);
-    Country addCountry(Country country);
-    Genre addGenre(Genre genre);
+    public Acter addActer(Acter acter);   
+    public Category addCategory(Category category);
+    public Producer addProducer(Producer producer);
+    public Country addCountry(Country country);
+    public Genre addGenre(Genre genre);
+    public Trailer addTrailer(Trailer trailer);
         
-    List<Genre> addArrGenre(List<Genre> genres);
-    List<Acter> addArrActer(List<Acter> acters);
-        List<Producer> addArrProducer(List<Producer> producers);   
-    List<Country> addArrCountry(List<Country> countrys);
-    List<Trailer> addArrTrailer(List<Trailer> trailers);
-    List<Comment> addArrComment(List<Comment> comments);
-    List<Torrent> addArrTorrent(List<Torrent> torrents);
+    public List<Genre> addArrGenre(List<Genre> genres);
+    public List<Acter> addArrActer(List<Acter> acters);
+    public List<Producer> addArrProducer(List<Producer> producers);   
+    public List<Country> addArrCountry(List<Country> countrys);
+    public List<Trailer> addArrTrailer(List<Trailer> trailers);
+    public List<Comment> addArrComment(List<Comment> comments);
+    public List<Torrent> addArrTorrent(List<Torrent> torrents);
     
-        Comment addComment(Comment comment);
+    public Comment addComment(Comment comment);
     
-    List<Genre> getGenresById(int id);
-    List<Producer> getProducersById(int id);
-    List<Country> getCountrysById(int id);
-    List<Trailer> getTrailersById(int id);
-    List<Comment> getCommentsById(int id);
-    List<Torrent> getTorrentsById(int id);
+    public List<Genre> getGenresById(int id);
+    public List<Producer> getProducersById(int id);
+    public List<Country> getCountrysById(int id);
+    public List<Trailer> getTrailersById(int id);
+    public List<Comment> getCommentsById(int id);
+    public List<Torrent> getTorrentsById(int id);
     
-    List<User> getUserById(int id);
+    public List<User> getUserById(int id);
     
-    Film getMinFilmById(int id);
+    public Film getMinFilmById(int id);
     
 //    List<Comment> addArrComment(Set<Comment> comments);
 
 //    Image addImage(Image image);
 
-    Star addStar(Star star);
+    public Star addStar(Star star);
 //
 //    public List<User> getUser(int id);
 
     public List<Category> getCategoryByFilmId(int id);
     
-    Page<Film> findLastAdded(int amount); // id - kol-vo vivodimih suchnostey
-    List<Torrent> findTorrentByFilmId(int id);
+    public Page<Film> findLastAdded(int amount); // id - kol-vo vivodimih suchnostey
+    public List<Torrent> findTorrentByFilmId(int id);
+
+    public List<Object> findTopDownloads();
+
+    
 
 }

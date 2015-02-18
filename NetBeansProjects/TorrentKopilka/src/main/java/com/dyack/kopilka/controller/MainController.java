@@ -9,6 +9,8 @@ import com.dyack.kopilka.service.ContentService;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -57,6 +59,17 @@ public class MainController {
         requestAddContent = new RequestAddContent(); // 
         requestAddContent.SaveFilm(contentService, request);
     }
+    
+    @RequestMapping(value = "/newTorrent", method = RequestMethod.PUT, headers = "Content-Type=application/json") // , headers = "Content-Type=application/json"
+    @ResponseStatus(HttpStatus.CREATED)			// 
+    public void newTorrent(@RequestBody Map<String, String> request) { 
+        System.out.println("==== /newTorrent ====");
+        for (Map.Entry<String, String> tmp : request.entrySet()) {
+            System.out.println(tmp.getKey() + " : " + tmp.getValue());
+        }
+        requestAddContent = new RequestAddContent(); // 
+        requestAddContent.SaveTorrent(contentService, request);
+    }
 
     @RequestMapping(value = "/getLastAdded/{amount}", method = RequestMethod.GET)
     public @ResponseBody
@@ -69,146 +82,21 @@ public class MainController {
     public @ResponseBody
     List<Torrent> getTorrentByFilmId(@RequestParam int id) {
         System.out.println("==== /getTorrentByFilmId ==== id = " + id);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return contentService.findTorrentByFilmId(id);
     }
+    
+    @RequestMapping(value = "/getTopDownloads", method = RequestMethod.GET)
+    public @ResponseBody
+    List<Object> getTopDownloads() {
+        System.out.println("==== /getTopDownloads ");
+        return contentService.findTopDownloads();
+    }
+    
+    
 
 }
-
-//    @RequestMapping(value = "/searchContent", method = RequestMethod.GET)
-//    public @ResponseBody
-//    Film searchContent(@RequestParam String text) {
-//        return contentService.getByName(text);
-//    }
-//    @RequestMapping(value = "getLast", method = RequestMethod.GET) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//    public @ResponseBody
-//    List<FilmResponceById> getLast(@RequestParam int count) {
-//        
-////        ResponseLastCount rlc = new ResponseLastCount();
-////         contentServiceResponse.getIdLastAddedOnCount(count);
-//        return new ResponseLastCount(contentService, contentServiceResponse, count).getRespList();
-//    }
-//    @RequestMapping(value = "getAll", method = RequestMethod.GET) // vse filmi /value = ""(tolko JSON)
-//    public @ResponseBody
-//    List<Film> getAll() {
-//        return contentService.getAll();
-//    }
-//    @RequestMapping(value = "/add", method = RequestMethod.GET)
-//    public void createFilm() {
-//        film = new Film();
-//        film.setName("Mat");
-//        film.setOriginalName("Matrix");
-//        contentService.addFilm(film);
-//    }
-//    @RequestMapping(value = "/lastAdded", method = RequestMethod.GET)
-//    public @ResponseBody
-//    List<Film> getLastAdded() {
-//        return contentService.getLastAdded();
-//    }
-//    @RequestMapping(value = "/findAll/{x}", method = RequestMethod.GET) // kolichestvo vozvrashennih filmov
-//    public @ResponseBody
-//    Page<Film> getLastX(@PathVariable int x) {
-//
-//        return contentService.findAll(x);
-//    }
-//    @RequestMapping({"/login2"})  // GET
-//    public String showLoginPage2() {
-//        return "login2";
-//    }
-//    public String postHandler(@RequestParam(value = "email") String email, @RequestParam(value = "password") String password)  {
-//        System.err.println("********************************************************");
-//        System.err.println("password=" + password);
-//        System.err.println("email=" + email);
-//        System.err.println("********************************************************");
-//        if (email.equals(user.getEmail()) && password.equals(user.getPassword())) {
-//            return "index";
-//        }
-//        return null;
-//    }
-//    @RequestMapping(value = "/searchContent", method = RequestMethod.GET)
-//    public @ResponseBody
-//    Response getCharNum(@RequestParam String text) {
-//        Response result = new Response();
-//        if (text != null) {
-//            bank = new Bank();
-//            bank = bankService.getById(Long.parseLong(text));        
-//            result.setText(bank.getName());
-//            result.setCount(text.length());
-//        }
-//        return result;
-//    @RequestMapping(value = "/add", method = RequestMethod.GET)
-//    public String createBank(ModelMap model) {
-////        Bank 
-//        bank = new Bank();
-//        bank.setId(5);
-//        bank.setName("Privat123");
-//
-//        bankService.addBank(bank);
-//        return "indexS";
-//    }
-//        @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-//    public @ResponseBody
-//    Film getAll() {
-//        System.err.println("**********************");
-//        System.err.println("getAll =========== ");
-////        FilmResponce filmResponse = new FilmResponce();
-//            film = new Film();
-//            film = contentService.getById(1);           
-////            filmResponse.setName(film.getName());
-//        return film;
-//    }
-//    }
-//    @RequestMapping(value = "/add", method = RequestMethod.GET)
-//    public String getAllMovie(ModelMap model) {
-//
-//        Bank bank = new Bank();
-////        bank.setId(1);
-//        bank.setName("Privat");
-//
-//        BankService b = new BankServiceImpl();
-//        b.addBank(bank);
-//
-//        model.addAttribute("name", "MainController - WORK - no name");
-//        model.addAttribute("janr", "Triller ...");
-//        model.addAttribute("kach", "HDRip");
-//        model.addAttribute("size", "1.36GB");
-//        model.addAttribute("movie", "*** ");
-//        return "indexS";
-//    }
-//    private static Logger logger = Logger.getLogger(MainController.class.getName());
-// @Autowired - ???
-//    private EntityDao entity;
-//    
-////    @Inject 
-////    @Autowired
-//    public MainController(){
-//        this.entity = new EntityDaoImpl();
-//    }
-//    
-//    @RequestMapping(method = RequestMethod.GET)
-//    public String getAllMovie(ModelMap model) { 
-//        model.addAttribute("name", "MainController - WORK - no name");
-//        model.addAttribute("janr", "Triller ...");
-//        model.addAttribute("kach", "HDRip");
-//        model.addAttribute("size", "1.36GB");
-//        model.addAttribute("movie", "...");
-//        return "indexS";
-//    }
-//    
-//    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-//    public String getMovie(@PathVariable String name, ModelMap model) { 
-//        
-////        entity = new EntityDaoImpl();
-//       model.addAttribute("name", "MainController - WORK + " + "*** " + name);
-//        model.addAttribute("movie", "(MainController)/.name***() - " + entity.getName(name));
-//        return "indexS";
-//    }
-//        @RequestMapping(method = RequestMethod.POST) 	// Обрабатывает POST-запросы			// Возвращает ответ HTTP 201
-//    public @ResponseBody Spittle createSpittle(@Valid Spittle spittle, BindingResult result, HttpServletResponse response) throws BindException {
-//        if (result.hasErrors()) {
-//            throw new BindException(result);
-//        }
-//        spitterService.saveSpittle(spittle);
-//        response.setHeader("Location", "/spittles/" + spittle.getId()); 	// Указать местоположение ресурса
-//        return spittle; 		// Вернуть ресурс
-//    }
-//}

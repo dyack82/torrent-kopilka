@@ -1,11 +1,23 @@
 package com.dyack.kopilka.entity;
 
 import java.io.Serializable;
-import java.util.*;
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
+
 import org.hibernate.annotations.GenericGenerator;
-import javax.persistence.*;
-import static javax.persistence.CascadeType.ALL;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 @Entity
 @Table(name = "film")
@@ -29,7 +41,7 @@ public class Film implements Serializable{
     @Column(name = "duration")
     private int duration;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 5000)
     private String description;
     
     @Column(name = "downloads_count")
@@ -256,22 +268,5 @@ public class Film implements Serializable{
                 + "addDate=" + addDate + ", releaseDate=" + releaseDate + "\ncategory=" + category + ", star=" + star +
                 "\nacters=" + acters + ",\ngenres=" + genres + '}';
     }
-
-//    @Override
-//    public String toString() {
-//        return "Film{" + "id=" + id + ", name=" + name + ", originalName=" + originalName + 
-//                "\nageGroup=" + ageGroup + ", duration=" + duration + ", description=" + description + 
-//                "\ndownloadsCount=" + downloadsCount + ", imagePrefix=" + imagePrefix + 
-//                "\naddDate=" + addDate + ", releaseDate=" + releaseDate + ", category=" + category + 
-//                "\nstar=" + star + ", genres=" + genres + ", acters=" + acters + ", producers=" + producers + 
-//                "\ncountrys=" + countrys + ", trailers=" + trailers + ", comments=" + comments + 
-//                "\ntorrents=" + torrents + '}';
-//    }
-
-
-
-
-    
-    
 
 }

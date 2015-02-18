@@ -204,9 +204,17 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public List<Torrent> findTorrentByFilmId(int id) {
-//        final PageRequest page = new PageRequest(0, 2, Sort.Direction.ASC, "id");
-//        return torrentRepository.findAll(page);
         return torrentRepository.findTorrentByFilmId(id);
+    }
+
+    @Override
+    public List<Object> findTopDownloads() {
+        return filmRepository.findTopDownloads();
+    }
+
+    @Override
+    public Trailer addTrailer(Trailer trailer) {
+        return trailerRepository.saveAndFlush(trailer);
     }
 
 }

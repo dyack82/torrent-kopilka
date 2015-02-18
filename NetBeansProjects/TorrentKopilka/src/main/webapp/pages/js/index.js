@@ -1,36 +1,25 @@
 $(function () {
+    
+ var $skrit = $('#skrit').text();
+ var $podrobnee = $('#podrobnee').text();
 
-    for (var i = 0; i < 4; i++) {
+
+    for (var i = 0; i < 10; i++) {
         var $post = $('#clone').clone().addClass("clone" + i);
         $('#posts').append($post);
     }
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 1; i++) {
         var $top = $('#top').clone();
         $('#sidebar').append($top);
     }
 
     $(this).on('scroll', function () {
-        if ($(this).scrollTop() > 11350) {         // если scroll опустить вниз больше чем на 10px - получим сообщение в консоль
+        if ($(this).scrollTop() > 100000) {         // если scroll опустить вниз больше чем на 10px - получим сообщение в консоль
             console.log('redy');
         }
     });
 
-//    $('.downloadButton').click(function () {        // KLICK - RAZVOROT
-//        var $thisIndex = $('.downloadButton').index(this);
-//        $('.more').eq($thisIndex).toggle();
-        /*-----------------------  NE UDALAT  -----------------------------------------------------*/
-//                console.log($thisIndex);
-//                    var amount = data.content[i].torrents.length;
-//                    for (var i = 0; i < 2; i++) {
-//                        var $tableClone = $('#tableClone').clone().addClass("clone" + i);
-//                        $('#tableClones').append($tableClone);
-//                        console.log('**');
-//                    }
-//    });
-
-
-//                console.log();
 //    $('#search').click(function () {              // search content
 //        var inputText = $("#input_name").val();
 //        $.ajax({
@@ -49,11 +38,11 @@ $(function () {
 //        });
 //    });
 
-
+    /***************************************************************************************************************************/
+    /******************************************  GET LAST  *********************************************************************************/
+    /***************************************************************************************************************************/
 //    $('#getLast').click(function () {
     $(function () {
-
-//        var inputText = $("#input_str").val();
         $.ajax({
             url: 'getLastAdded/10',
             type: 'GET',
@@ -68,11 +57,9 @@ $(function () {
                 console.log(data);
                 var countElements = data.numberOfElements;
                 var arrNemes = "";
-//                console.log("= = " + data.content[0].countrys[0].id);
                 for (var i = 0; i < countElements; i++) {
-//                    console.log("= = " + i);
                     if (data.content[i].name) {
-                        $(".name").eq(i).text(data.content[i].name + ' / ' + data.content[i].originalName + ' / ' + data.content[i].id);
+                        $(".name").eq(i).text(data.content[i].name + ' / ' + data.content[i].originalName);
                         $(".imageContent").eq(i).attr('src', 'pages/images/' + data.content[i].imagePrefix + '/' + data.content[i].originalName + '.jpg');
                         $('.downloadButton').eq(i).attr('id', data.content[i].id);
                     }
@@ -116,201 +103,186 @@ $(function () {
                     if (data.content[i].duration) {
                         $(".time_duration").eq(i).text(data.content[i].duration + " min");
                     }
+//                                if (data.content[i].trailers) {
+//                                   trailer = data.content[i].link;
+//                                   $(".trailer").eq(i).text(data.content[i].trailers[0].link);
+//                               }
                     if (data.content[i].description) {
-                        $(".description").eq(i).text(" " + data.content[i].description);
+                        $(".description div").eq(i).text($(".description div").eq(i).text() + " " + data.content[i].description);
                     }
-                    if (data.content[i].star.kinopoisk) {
+                    if (data.content[i].star.kinopoisk !== null) {
                         $(".ratingKinopoisk a").eq(i).attr('href', 'http://www.kinopoisk.ru/film/' + data.content[i].star.kinopoisk + '/');
                         $(".ratingKinopoisk img").eq(i).attr('src', 'http://rating.kinopoisk.ru/' + data.content[i].star.kinopoisk + '.gif');
                     }
                     if (data.content[i].online) {
                         $(".onlineButton").eq(i).attr('href', data.content[i].online);
                     }
-                    /*----------------------------------- pravilnoe klonirovanie -----  vstsvit v drugoe mesto -----------------------------------------------------*/
-//                    var amount = data.content[i].torrents.length;
-//                    var $tableClone = $('#tableClone').clone();
-//                    for (var j = 0; j < amount; j++) {                      
-//                        $('#tableClones').append($tableClone);
-//                    }
-//                    $('#wrapperTable > #tableClone').hide(4000); // DEL - tu s kotoroy kopirovali
-///*--------------------------------------------------------------------------------------------*/
-//                    if (i > 0) {
-////                        continue;
-//                    }
-////                    console.log('--Q - i = ' + i + " tmpTor = " );
-////                    $(".tableClone .quality").eq(i).text('1');
-////                    console.log('---F - i = ' + i + " tmpTor = ");
-////                    $(".tableClone .format").eq(i).text('2');
-//
-//
-//                    arrNemes = "";
-//                    for (var tmpTor in data.content[i].torrents) {
-////                        console.log('--i = ' + i); 
-////                        if(tmpTor == 1){
-////                            break;
-////                        }
-////                    console.log('--tmpTor = ' + tmpTor);    
-//                        arrNemes += data.content[i].torrents[tmpTor].quality + ", ";
-//                        console.log('--Q - i = ' + i + " tmpTor = " + tmpTor);
-//                        $(".quality").eq(i).text(arrNemes);
-//                        arrNemes = "";
-//                        arrNemes += data.content[i].torrents[tmpTor].format + ", ";
-//                        console.log('---F - i = ' + i + " tmpTor = " + tmpTor);
-//                        $(".format").eq(i).text(arrNemes);
-//                        arrNemes = "";
-//                        break;
-//                    }
-                    /*-------------------------------------------------------------------------------------------------------*/
-//                    }
-
-
-
-
-
-
-//                    arrNemes = "";
-//                    var amount = data.content[i].torrents.length;
-//                    for (var x = 0; x < amount; x++) {
-//                        console.log("*");
-//                    }
-////                    $('#tableClone').clone().insertAfter('#tableClone');
-//                     $('#tableClone').clone(true).appendTo('#tableClones').eq(i);
-
-
-
-//                    if (data.content[i].torrents) {
-//                            for (var i = 0; i < 4; i++) {
-//                                $('#tableClone').clone().appendTo($('#more').eq(i), '#wrapperTable', false);
-//                                $('#tableClones').append($tableClone);
-//                            }
-//                        for (var tmp in data.content[i].torrents) {
-//                            arrNemes = "";
-//                            if (data.content[i].torrents[tmp].quality !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].quality + " ";
-//                            }
-//                            if (data.content[i].torrents[tmp].format !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].format;
-//                            }
-//                            $(".quality_format").eq(i).text(arrNemes);
-//                            arrNemes = "";
-//                            if (data.content[i].torrents[tmp].videoCodec !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].videoCodec + " ";
-//                            }
-//                            if (data.content[i].torrents[tmp].video !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].video;
-//                            }
-//                            $(".video_codec_video").eq(i).text(arrNemes);
-//                            arrNemes = "";
-//                            if (data.content[i].torrents[tmp].sizeFile !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].sizeFile;
-//                            }
-//                            $(".sizeFile").eq(i).text(arrNemes);
-//                            arrNemes = "";
-//                            if (data.content[i].torrents[tmp].audioTransfer !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].audioTransfer;
-//                            }
-//                            $(".audio_transfer").eq(i).text(arrNemes);
-//                            arrNemes = "---";
-//                            if (data.content[i].torrents[tmp].subtitles !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].subtitles;
-//                            }
-//                            $(".subtitles").eq(i).text(arrNemes);
-//                            arrNemes = "";
-//                            if (data.content[i].torrents[tmp].audioCodec !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].audioCodec + " ";
-//                            }
-//                            if (data.content[i].torrents[tmp].audio !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].audio;
-//                            }
-//                            arrNemes = "";
-//                            $(".audio_codec_audio").eq(i).text(arrNemes);
-//                            if (data.content[i].torrents[tmp].torrentLink !== null) {
-//                                $(".torrent a").eq(i).attr('href', data.content[i].torrents[tmp].torrentLink);
-//                            }
-//                             arrNemes = "";
-//                        }
-
-
-//                        arrNemes = "";
-//                            for (var tmp in data.content[i].torrents.video_codec !== null) {
-//                                arrNemes += data.content[i].torrents[tmp].video_codec;
-//                            }
-//                            for (var tmp in data.content[i].torrents.video) {    
-//                                arrNemes += data.content[i].torrents[tmp].video;
-//                            }                       
-//                        $(".video_codec_video").eq(i).text(arrNemes);
-
-
                 }
             },
-            error: function (jqXHR) {
-                console.log('Error!+++' + jqXHR);
-                alert('Error!+++' + jqXHR.toString()); // ?????????
+            error: function (error) {
+                console.log('Error!+++' + error);
+                alert('Error!+++' + error.toString()); 
             }
         });
     });
     /***************************************************************************************************************************/
-  /******************************************  TORRENT  *********************************************************************************/
-  /***************************************************************************************************************************/
+    /******************************************  TOP PO SKACHKE  *********************************************************************************/
+    /***************************************************************************************************************************/
+    $('#getTopDownloads').click(function () {
+//    $(function () {
+        $.ajax({
+            url: 'getTopDownloads',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json; charset=windows-1251',
+            mimeType: 'application/json',
+//            data: ({
+//                count: "2"
+//            }),
+            async: true,
+            success: function (data) {
+                console.log(data);
+                var topLength = data.length;
+                console.log(topLength);
+                for (var len = 0; len < topLength; len++) {
+
+
+// $(".imageContent").eq(i).attr('src', 'pages/images/' + data.content[i].imagePrefix + '/' + data.content[i].originalName + '.jpg');
+                    $('.top img').eq(len).attr('src', 'pages/images/' + data[len][2] + '/' + data[i][1] + '.jpg');
+                    $('.top b').eq(len).text(data[len][0] + " (" + data[len][3].slice(0, -6) + ")");
+                }
+            },
+            error: function (error) {
+                console.log('Error!+++' + error);
+                alert('Error!+++' + error.toString()); // ?????????
+            }
+        });
+    });
+    /***************************************************************************************************************************/
+    /******************************************  TORRENT  *********************************************************************************/
+    /***************************************************************************************************************************/
 
     $('.downloadButton').click(function () {        // podgrugaem torrent po ID
         var $thisIndex = $('.downloadButton').index(this);
         var $thisId = $(this).attr('id');
-        var arrData;
-        
+
+        $('.downloadButton').eq($thisIndex).css({
+//            'background-image': 'url(pages/images/loader.gif)',
+            'background-image': 'url(loader.gif)',
+            'background-repeat': 'no-repeat',
+            'background-position': 'center',
+            'background-size': '20px',
+            'font-size': '0px',
+            'height': '30px',
+            'width': '180px'
+        });
+
 //--------------------------  RAZVOROT - SVOROT  -----------------------------------------------------
-        if($('.more').eq($thisIndex).css('display') === 'none' ){   
-            $('.more').eq($thisIndex).css({ display: 'block' });
-            console.log('none -> block');
-        }
-        else if($('.more').eq($thisIndex).css('display') === 'block' ){
-            $('.more').eq($thisIndex).css({ display: 'none' });
+//        if ($('.more').eq($thisIndex).css('display') === 'none') {
+//            $('.more').eq($thisIndex).css({display: 'block'});
+//            console.log('none -> block');
+//        }
+        if ($('.more').eq($thisIndex).css('display') === 'block') {
+//            $('.more #youtubeColorRu').eq($thisIndex).slideUp(1000);
+            $('.more').eq($thisIndex).slideUp(1000);
+//            $('.more').eq($thisIndex).css({display: 'none'});
             console.log('  block -> none');
+            $('.downloadButton').eq($thisIndex).html('<b>' + $podrobnee + '</b>'); //////////////////////////////////////////////////////
+                 $('.downloadButton').eq($thisIndex).css({
+//            'background-image': 'url(./pages/images/loader.gif)',
+            'background-image': 'none',
+            'font-size': '13px',
+            'height': '30px',
+            'width': '220px'
+        });  
+       
             return;
         }
-//      $('.more').eq($thisIndex).toggle();            // NE ISPOLZOVAT !!! // KLICK - SVOROT-RAZVOROT  
- //---------------------------------------------------------------------------------------------------       
+ //******************************************************       
+           $('.downloadButton').eq($thisIndex).css({
+            'background-image': 'url(./pages/images/loader.gif)'
+        });
+////////////////////////      $('.more').eq($thisIndex).toggle();            // NE ISPOLZOVAT !!! // KLICK - SVOROT-RAZVOROT        
         $.ajax({
             url: 'getTorrentByFilmId',
             type: 'GET',
             dataType: 'json',
             contentType: 'application/json; charset=windows-1251',
-            mimeType: 'application/json',
+            mimeType: 'application/json',  
             data: ({
                 id: $thisId
             }),
             async: true,
             success: function (data) {
                 console.log(data);
-/*----------------------------------  clone  -------------------------------------------*/
-                    var amount = data.length;
-                    for (var j = 0; j < amount; j++) {      
-                        var $tableClone = $('#wrapperTable > #tableClone').eq($thisIndex).clone();
-                        $('#wrapperTable > #tableClones').eq($thisIndex).append($tableClone);                       
-                    }   
-                    $('#wrapperTable > #tableClone').eq($thisIndex).hide(); // DEL - tu s kotoroy kopirovali
-/*---------------------------------------------------------------------------------------*/
-//                console.log('***************');
-                arrData = "";
-                    for (var tmpTor in data) {
-                        arrData += data[tmpTor].format + ", ";  // DOSTAEM PRAVILNO                     
-                        var $tableClones = $('#wrapperTable > #tableClones').eq($thisIndex);   
-                        var $tableClone = $tableClones.children("#tableClone").eq(tmpTor); // $tableClone - KONKRETNAYA STROKA
-                        var $row = $tableClone.children('.row');
-                         var $format = $row.children('.format');
-                        $format.text(arrData);
-                        arrData = "";                  
-                    }
+                /*----------------------------------  text -> skrit  --------------------------------------------------------*/
+                $('.downloadButton').eq($thisIndex).html('<b>' + $skrit + '</b>');  ///////////////////////////////////////////////
+                $('.downloadButton').eq($thisIndex).css({
+                    
+                    'font-size': '20px',
+                    'height': '30px',
+                    'color': 'white',
+                    'text-align': 'center',
+//                    'padding-top': '3px',
+                    'width': '180px',
+                    'background-image': 'none'
+                });
+//                $('.downloadButton b').eq($thisIndex).css({
+//                    'margin-top': '3px'
+//                     });
+//                
+                /*----------------------------------  more -> open  -------------------------------------------*/
+                if ($('.more').eq($thisIndex).css('display') === 'none') {
+//                    $('.more').eq($thisIndex).css({display: 'block'});
+//$('.more').eq($thisIndex).animate({height: 'show'}, 5000);//******************************************
+//$('#youtubeColorRu').eq($thisIndex).animate({height: 'show'}, 4000);
 
-
-
-
-
+$('.more').eq($thisIndex).slideDown(1000); 
+                    console.log('none -> block');
+                }
+                /*----------------------------------  clone  -------------------------------------------*/
+                var amount = data.length;
+                for (var j = 0; j < amount; j++) {
+                    var $tableClone = $('#wrapperTable > #tableClone').eq($thisIndex).clone();
+                    $('#wrapperTable > #tableClones').eq($thisIndex).append($tableClone);
+                }
+                $('#wrapperTable > #tableClone').eq($thisIndex).hide(); // DEL - tu s kotoroy kopirovali
+                /*---------------------------------  trailer  ------------------------------------------------------*/
+//                var tr = null;
+//             tr = $(".trailer").eq($thisIndex).text();
+//                if(tr !== null){
+////                    console.log($('#youtubeColorRu movie'));
+////                            $('#youtubeColorRu movie value').attr('value', '15');
+//$('#youtubeColorRu').eq($thisIndex).attr('src', 'http://youtu.be/P7prFugK7ks');
+//                }
                 
+                
+                
+//                <object id="youtubeColorRu" width="560" height="316">
+//                                    <param name="movie" value=""></param>
+
+                /*--------------------------------------------------------------------------------------------------*/
+//                console.log('***************');
+                for (var indexTor in data) {
+//                        arrData += data[tmpTor].format + ", ";  // DOSTAEM PRAVILNO                     
+                    var $tableClones = $('#wrapperTable > #tableClones').eq($thisIndex);
+                    var $tableClone = $tableClones.children("#tableClone").eq(indexTor); // $tableClone - KONKRETNAYA STROKA
+                    var $row = $tableClone.children('.row');
+                    $row.children('.quality').text(data[indexTor].quality);
+                    $row.children('.format').text(data[indexTor].format);
+                    $row.children('.video_codec_video').text(data[indexTor].videoCodec + " " + data[indexTor].video);
+                    $row.children('.sizeFile').text(data[indexTor].sizeFile);
+                    $row.children('.audio_transfer').text(data[indexTor].audioTransfer);
+                    $row.children('.subtitles').text(data[indexTor].subtitles);
+                    $row.children('.audio_codec_audio').text(data[indexTor].audioCodec + " " + data[indexTor].audio);
+                    var $torrentLink = $row.children('.torrentLink');
+                    var $a = $torrentLink.children('a').attr('href', 'pages/' + data[indexTor].torrentLink);
+                    $a.children('img').attr('src', 'pages/images/utorrent-logo.png');
+                }
             },
-            error: function (jqXHR) {
-                console.log('Error!+++' + jqXHR);
-                alert('Error!+++' + jqXHR.toString()); 
+            error: function (error) {
+                console.log('Error!+++' + error);
+                alert('Error!+++' + error.toString());
             }
 
         });

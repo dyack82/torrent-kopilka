@@ -6,30 +6,31 @@ import java.util.*;
 import org.joda.time.DateTime;
 
 public class RequestAddContent {
-    
-        Film film;
-        Film respFilm;
-        String imagePrefix = "2015-01";
-        List<Producer> arrProducer;
-        Producer producer;
-        List<Producer> respArrProducer;
-        Category category;
-        Category respCat;
-        Star star;
-        Star respStar;
-        List<Country> arrCountry;
-        Country country;
-        List<Country> respArrCountry;
-        List<Genre> arrGenre;
-        Genre genre;
-        List<Acter> arrActer;
-        Acter acter;
-        
+
+    Film film;
+    Film respFilm;
+    String imagePrefix = "2015-01";
+    List<Producer> arrProducer;
+    Producer producer;
+    List<Producer> respArrProducer;
+    Category category;
+    Category respCat;
+    Star star;
+    Star respStar;
+    List<Country> arrCountry;
+    Country country;
+    List<Country> respArrCountry;
+    List<Genre> arrGenre;
+    Genre genre;
+    List<Acter> arrActer;
+    Acter acter;
+    Trailer trailer;
+    Set<Trailer> respTrailer;
+
     public RequestAddContent() {
     }
 
     public void SaveFilm(ContentService contentService, Map<String, String> request) {
-
 
         if (!"".equals(request.get("originalName"))) {
             film = new Film();
@@ -52,6 +53,12 @@ public class RequestAddContent {
             if (!"".equals(request.get("releaseDate"))) {
                 film.setReleaseDate(new DateTime(request.get("releaseDate")).toDate());
             }
+            if (!"".equals(request.get("trailerLink"))) {
+                trailer = new Trailer();
+                trailer.setLink(request.get("trailerLink"));
+//                respTrailer = contentService.addTrailer(trailer);
+                film.setTrailers(null);
+            }
             if (!"".equals(request.get("category"))) {
                 category = new Category();
                 category.setName(request.get("category"));
@@ -68,6 +75,9 @@ public class RequestAddContent {
                 respStar = contentService.addStar(star);
                 film.setStar(respStar);
             }
+            if (!"".equals(request.get("onlineLink"))) {
+                film.setOnline(request.get("onlineLink"));
+            }
 
             respFilm = contentService.addFilm(film);
 
@@ -83,7 +93,7 @@ public class RequestAddContent {
                     }
                 }
                 respArrProducer = contentService.addArrProducer(arrProducer);
-                    Set<Producer> setRespArrProducer = new HashSet<>(respArrProducer);
+                Set<Producer> setRespArrProducer = new HashSet<>(respArrProducer);
                 film.setProducers(setRespArrProducer);
             }
             if (!"".equals(request.get("country1"))
@@ -100,7 +110,7 @@ public class RequestAddContent {
                     }
                 }
                 respArrCountry = contentService.addArrCountry(arrCountry);
-                    Set<Country> setRespArrCountry = new HashSet<>(respArrCountry);
+                Set<Country> setRespArrCountry = new HashSet<>(respArrCountry);
                 film.setCountrys(setRespArrCountry);
             }
             if (!"".equals(request.get("genre1"))
@@ -117,8 +127,8 @@ public class RequestAddContent {
                     }
                 }
                 List<Genre> respArrGenre = contentService.addArrGenre(arrGenre);
-                    Set<Genre> setRespArrGenre = new HashSet<>(respArrGenre);
-                film.setGenres(setRespArrGenre); 
+                Set<Genre> setRespArrGenre = new HashSet<>(respArrGenre);
+                film.setGenres(setRespArrGenre);
             }
             if (!"".equals(request.get("acter1"))
                     || !"".equals(request.get("acter2"))
@@ -139,14 +149,68 @@ public class RequestAddContent {
                     }
                 }
                 List<Acter> respArrActer = contentService.addArrActer(arrActer);
-                    Set<Acter> setRespArrActer = new HashSet<>(respArrActer);
-                film.setActers(setRespArrActer); 
-            }           
-       
+                Set<Acter> setRespArrActer = new HashSet<>(respArrActer);
+                film.setActers(setRespArrActer);
+            }
+
         } else {
             System.out.println("--- NO DATA REQUEST ---");
         }
+    }
 
+    public void SaveTorrent(ContentService contentService, Map<String, String> request) {
+        System.out.println("============================");
+        Film respTorrent = contentService.getByName(request.get("nameFilm"));
+        System.out.println("****************************************** " + respTorrent);
+
+        List<Torrent> arrTorrent = new ArrayList<>();
+        Torrent torrent = new Torrent();
+        if (!"".equals(request.get("kachestvo"))) {
+            torrent.setQuality(request.get("kachestvo"));
+        }
+        if (!"".equals(request.get("format"))) {
+            torrent.setFormat(request.get("format"));
+        }
+        if (!"".equals(request.get("videoCodec"))) {
+            torrent.setVideoCodec(request.get("videoCodec"));
+        }
+        if (!"".equals(request.get("sizeTorrentFile"))) {
+            torrent.setSizeFile(request.get("sizeTorrentFile"));
+        }
+        if (!"".equals(request.get("perevod"))) {
+            torrent.setAudioTransfer(request.get("perevod"));
+        }
+        if (!"".equals(request.get("subtitlesTorrent"))) {
+            torrent.setSubtitles(request.get("subtitlesTorrent"));
+        }
+        if (!"".equals(request.get("audioCodec"))) {
+            torrent.setAudioCodec(request.get("audioCodec"));
+        }
+        if (!"".equals(request.get("linkTorrent"))) {
+            torrent.setTorrentLink("torrents/2015-01/" + request.get("linkTorrent"));
+        }
+        torrent.setAudio("");
+        torrent.setVideo("");
+        torrent.setFilmTorrent(respTorrent);
+        arrTorrent.add(torrent);
+//        torrent.setQuality("DVDScr-");
+//        torrent.setFormat("AVI-");
+//        torrent.setSizeFile("1,37 Gb-");
+////        torrent.setSubtitles("–усские, јнглийские");
+//        torrent.setTorrentLink("torrents/2015-01/The Imitation Game.torrent");
+//        torrent.setAudio("MP3 2 ch, 256  бит/с");
+//        torrent.setAudioCodec("MPEG Audio");
+//        torrent.setAudioTransfer("–усский, ƒублированный");
+//        torrent.setVideo("1910  бит/с, 720x304");
+//        torrent.setVideoCodec("XviD");
+//        torrent.setFilmTorrent(respFilm2);
+//        arrTorrent.add(torrent);
+
+        List<Torrent> respArrTorrent = contentService.addArrTorrent(arrTorrent);
+        respTorrent.setTorrents(respArrTorrent);
+        
+        arrTorrent = null;
+        torrent = null;
     }
 
 }

@@ -26,18 +26,6 @@ public class FilmServiceTest {
 
     @Test
     public void testSaveFilm() throws Exception {
-        
-        
-        
-//                List<Object> respAll = new ArrayList<>();
-//        respAll.add(contentService.findTorrentByFilmId(1));
-//        respAllFilms.add(contentService.getMinFilmById(id));
-//        respAllFilms.add(contentService.getCategoryByFilmId(id));
-        System.out.println(contentService.findTorrentByFilmId(1));
-//        for (Object tmp : respAll) {
-//            System.out.println("---" + respAll.get(0).g);
-//        }
-//        System.out.println("** " + contentService.findTorrentByFilmId(1));
 
 //        Category category = new Category();
 //        category.setName("Художественный фильм");
@@ -55,7 +43,7 @@ public class FilmServiceTest {
 //        film.setAgeGroup(12);
 //        film.setDuration(114);
 //        film.setDescription("Английский математик и логик Алан Тьюринг помогает взломать код Enigma во время Второй мировой войны.");
-//        film.setDownloadsCount(0);
+//        film.setDownloadsCount(40);
 //        film.setImagePrefix("2015-01");
 //        film.setAddDate(new Date());
 //        film.setReleaseDate(new DateTime("2014-08-29").toDate());
@@ -159,46 +147,35 @@ public class FilmServiceTest {
 //
 //        List<Torrent> arrTorrent = new ArrayList<>();
 //        Torrent torrent = new Torrent();
-//        torrent.setQuality("DVDRip 3");
-//        torrent.setFormat("MKV 3");
-//        torrent.setSizeFile("1,36 Gb 3");
-//        torrent.setSubtitles("Русские, Английские 3");
-//        torrent.setTorrentLink("torrents/2015-01/Torrent-Kopilka-x.torrent 3");
-//        torrent.setAudio("mp2, 2 ch, 256 kbit/c 3");
+//        torrent.setQuality("DVDScr");
+//        torrent.setFormat("AVI");
+//        torrent.setSizeFile("1,37 Gb");
+////        torrent.setSubtitles("Русские, Английские");
+//        torrent.setTorrentLink("torrents/2015-01/The Imitation Game.torrent");
+//        torrent.setAudio("MP3 2 ch, 256 Кбит/с");
 //        torrent.setAudioCodec("MPEG Audio");
-//        torrent.setAudioTransfer("Русский, Дублированный 3");
-//        torrent.setVideo("MPEG-4 AVC, 5000 kbit/c, 1920x1080 3");
-//        torrent.setVideoCodec("H.26x 3");
+//        torrent.setAudioTransfer("Русский, Дублированный");
+//        torrent.setVideo("1910 Кбит/с, 720x304");
+//        torrent.setVideoCodec("XviD");
 //        torrent.setFilmTorrent(respFilm);
 //        arrTorrent.add(torrent);
 //      
-//        torrent = new Torrent();
-//        torrent.setQuality("BDRip 4");
-//        torrent.setFormat("AVI 4");
-//        torrent.setSizeFile("4,20 Gb 4");
-//        torrent.setSubtitles("Нет 4");
-//        torrent.setTorrentLink("torrents/2015-01/Torrent-Kopilka-x.torrent 4");
-//        torrent.setAudio("mp2, 2 ch, 256 kbit/c  4");
-//        torrent.setAudioCodec("MPEG Audio 4");
-//        torrent.setAudioTransfer("Оригинальная дорожка 4");
-//        torrent.setVideo("MPEG-4 AVC, 5000 kbit/c, 320x240 4");
-//        torrent.setVideoCodec("H.26x 4");
-//        torrent.setFilmTorrent(respFilm);
-//        arrTorrent.add(torrent);
+////        torrent = new Torrent();
+////        torrent.setQuality("BDRip");
+////        torrent.setFormat("AVI");
+////        torrent.setSizeFile("4,20 Gb");
+////        torrent.setSubtitles("Нет");
+////        torrent.setTorrentLink("torrents/2015-01/Torrent-Kopilka-x.torrent");
+////        torrent.setAudio("mp2, 2 ch, 256 kbit/c ");
+////        torrent.setAudioCodec("MPEG Audio");
+////        torrent.setAudioTransfer("Оригинальная дорожка");
+////        torrent.setVideo("MPEG-4 AVC, 5000 kbit/c, 320x240");
+////        torrent.setVideoCodec("H.26x");
+////        torrent.setFilmTorrent(respFilm);
+////        arrTorrent.add(torrent);
+//        
 //        List<Torrent> respArrTorrent = contentService.addArrTorrent(arrTorrent);
 //        film.setTorrents(respArrTorrent);
 
-        
-        
-        
-//int id = 1;
-//        List<Object> respAllFilms = new ArrayList<>();
-//        respAllFilms.add(contentService.findAll(id));
-////        respAllFilms.add(contentService.getMinFilmById(id));
-////        respAllFilms.add(contentService.getCategoryByFilmId(id));
-////        System.out.println(contentService.findAll(id));
-//        for (Object tmp : respAllFilms) {
-//            System.out.println("---" + tmp);
-//        }
     }
 }

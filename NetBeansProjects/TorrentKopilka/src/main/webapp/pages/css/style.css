@@ -10,7 +10,7 @@ body{
 }
 
 #page_header{ 
-    background: yellow;
+    background: grey;
     width: 1000px; 
     height: 100px;
     margin-top: -15px;
@@ -26,27 +26,46 @@ margin-left: auto;
 	margin-right: auto;
 }
 
-
+/*--------------------------------------------------  navigation  ---------------------*/
 .navigation {
-    margin-top: 10px;
+    width: 1000px;
+    height: 50px;
+    border: 1px solid white;
+    background: green;
+    margin: 20px auto;
+    border-radius: 7px;
+    /*position: fixed;*/
 }
 
-.navigation > nav > ul, #page_footer > nav > ul{
-    background: cyan;
-    border: 1px solid black;
-    list-style: none;
-    margin: auto 10% ;
-    padding: 10px;
-    border-radius: 5px;
+
+#search{
+	 float: right;
+	margin: 10px;
+	
 }
 
-.navigation > nav > ul > li, #page_footer nav > ul > li{
-    margin: 0 20px 0 0;
-    padding: 0;
-    display: inline;
+/*--------------------------------------------------------  sidebar  ------------------------------------*/
+#janr p{
+	/*margin: 0 0 0 40px;*/
+        margin: 0;
+        padding-top: 8px;
+        /*padding-bottom: auto;*/
+       padding-left: 40px;
+/*margin: 0;*/
+        height: 25px;
+       font-size: 15px;
+       font-weight: bold;
+       color: white;
+       /*font-*/
 }
-
+#janr p:hover{
+	cursor: pointer;
+	background: green; 
+        
+}
+/*------------------------------------------------------------  button  ------------------------------------*/
 .onlineButton, .downloadButton{
+	height: 30px;
 	padding: 0 15px;
 	text-shadow: 0 1px 0 #5f9d06;
 	float: right;
@@ -57,41 +76,25 @@ margin-left: auto;
 	display: block;
 }
 .onlineButton:hover, .downloadButton:hover {
-	background-color: #46b41a;
+	background-color: green;
         cursor: pointer;
 }
 .downloadButton{
+	width: 220px;
 	margin-top: -35px;
+        display: block;
+            text-align: justify;
 }
 .onlineButton{
-	margin-top: -50px;
+	margin-top: -40px;
 }
 b{
 	line-height: 30px;
 	color: white;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-span {
+/*---------------------------------------------------------------------------------*/
+/*span {
     font-size: 40px;
     color: orange;
     cursor: pointer;
@@ -102,43 +105,38 @@ span:hover:before {
     position: absolute;
     color: red;
 
-}
-
-
-
-
-
+}*/
 
 
 
 .post_header  {
-    background: cyan;	
-    /*height: 60px;*/
+    /*background: cyan;*/	
+    min-height: 30px;
 }
 
 
 .name {
-    background: pink;
+    /*background: pink;*/
     text-align: left;
-    /*	display: inline-block;*/
-    font-size: 30px;
+    	/*display: inline-block;*/
+    font-size: 20px;
     margin-left: 10px;
     margin-top: 15px;
 }
 
-.name small {
+/*.name small {
     font-size: 15px;
-}
+}*/
 
 
-.ratebox {
+/*.ratebox {
     margin-right: 50px;
     text-align: right;
     background: yellow;
 
-    /*	display: inline-block;*/
-    /*	position: relative;*/
-}
+    	display: inline-block;
+    	position: relative;
+}*/
 
 td.key h5 {
     text-align: right;	
@@ -156,7 +154,7 @@ td.key h5 {
 
 #posts{
     margin: 10px auto;
-    background: #f00;
+    background: #aeaeae;
     float: right;
     width: 800px;
     border-radius: 0 10px 10px 0;
@@ -189,20 +187,20 @@ img {
 	margin: 5px 5px 1px 5px;
 }
 .data{ 
-	background-color: #9eaeae;
+	/*background-color: #9eaeae;*/
 	margin-left: 0px;
 	height: 230px;
 	width: 552px;
 	display: inline-table;
 	padding-top: 10px;
 }
-.descript{
-	background-color: #9eae00;
-	height: 55px;
+.description{
+	/*background-color: #9eae00;*/
+	/*height: 55px;*/
 	width: 790px;
-	margin: 0 5px 40px 0;
+	margin: 5px 5px 40px 5px;
 	overflow: hidden;
-	display: inline;
+	display: inline-table;
 	
 /*
 		background-color: #9eaeae;
@@ -238,7 +236,7 @@ img {
 }
 .ratingKinopoisk{
 	margin-top: 10px;
-	background-color: red;
+	/*background-color: red;*/
         display: table;
 	margin: -15px 0 0 30px;
 	position: inherit;
@@ -246,32 +244,15 @@ img {
 .more {
 	display: none;
 	position: relative;
-	background-color: cyan;
-	min-height: 200px;
+	background-color: grey;
+	/*min-height: 200px;*/
 	margin: 0 5px;
 	
 }
 #youtubeColorRu{
         margin: 0 0 0 110px;
+        display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -295,8 +276,7 @@ img {
 
 /*-------------------------- table div --------------------------------------------------------------*/
 .wrapperTable{
-
-
+text-align: center;
 }
 .table{
    display:table;   
@@ -310,6 +290,8 @@ img {
     display:table-cell; 
     border:1px solid #aeaeae;
     width: 100px;
+/*    text-align: center;
+    display:table-cell;*/
 } 
 .rowHider{
     background-color: #8888ff;
@@ -325,21 +307,16 @@ a {
 nav ul li {
     display: block;
     list-style: none;
-    border: 1px solid red;
-}
+   height: 30px;
+   margin-left: 0;
+   background-color: brown;
 
-/*
-nav#top {
-        display: inline-block;
-border-bottom: 5px solid cyan ;	
-        
 }
-*/
 
 #posts footer {
     /*	display: inline-block;*/
     text-align: right;
-    background: yellow;	
+    /*background: yellow;*/	
 }
 
 #clone {
@@ -348,27 +325,12 @@ border-bottom: 5px solid cyan ;
 }
 .imageContent {
 	height: 310px;
+        min-width: 200px; 
+        max-width: 240px;
 }
 #clone img{
 margin: 3px 3px 0 3px;	
 }
-
-/*.description {*/
-/*    height: 140px;*/
-/*    overflow: hidden;*/
-/*display: initial;*/
-/*}*/
-
-
-/*
-.description button {
-    background: cyan;
-    text-align: right;
-    position: absolute;
-}
-*/
-
-
 
 tbody .top tr {
     background: yellow;
@@ -387,9 +349,7 @@ article .post {
 
 
 #page_footer{
-    background: yellow;
-    clear: both;
-    display: block; 
-    text-align: center;
+height: 30px;
     width: 100%; 
+	background: grey;
 }

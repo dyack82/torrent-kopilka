@@ -30,7 +30,7 @@ public UserDetailsService getUserDetailsService(){
     public UrlBasedViewResolver setupViewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();
         resolver.setPrefix("/pages/"); 
-        resolver.setSuffix(".html");     // .jsp // .html
+        resolver.setSuffix(".html");  
         resolver.setViewClass(JstlView.class);
 
         return resolver;

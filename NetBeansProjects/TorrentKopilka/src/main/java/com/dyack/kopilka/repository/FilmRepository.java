@@ -23,4 +23,7 @@ public interface FilmRepository extends JpaRepository<Film, Integer> {
     @Override
     public Page<Film> findAll(Pageable pgbl);
 
+        @Query(value = "select name, original_name, image_prefix, release_date, downloads_count FROM film order by downloads_count desc limit 10;", nativeQuery = true)
+    public List<Object> findTopDownloads();
+
 }
